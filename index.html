@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Mason & Nora · 2026.11.10 · 三亚亚龙湾瑞吉</title>
+<meta name="description" content="Mason 与 Nora 的婚礼 · 2026年11月10日 · 三亚亚龙湾瑞吉酒店" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Dancing+Script:wght@500;600;700&family=Noto+Serif+SC:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- ===== 导航 ===== -->
+<nav class="nav" id="nav">
+  <a href="#hero" class="nav__brand">M <span>&amp;</span> N</a>
+  <button class="nav__toggle" id="navToggle" aria-label="菜单">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav__links" id="navLinks">
+    <li><a href="#countdown">倒计时</a></li>
+    <li><a href="#invitation">邀请函</a></li>
+    <li><a href="#details">婚礼信息</a></li>
+    <li><a href="#rsvp">出席回复</a></li>
+    <li><a href="#timeline">流程</a></li>
+    <li><a href="#dresscode">着装</a></li>
+    <li><a href="#hotel">酒店</a></li>
+    <li><a href="#travel">攻略</a></li>
+  </ul>
+</nav>
+
+<!-- ===== 主图背景区：首屏 + 倒计时 + 邀请函 共享水彩背景 ===== -->
+<div class="topshot">
+<!-- ===== HERO ===== -->
+<header class="hero" id="hero">
+  <div class="hero__veil"></div>
+
+  <div class="hero__content">
+    <p class="hero__eyebrow">WE'RE GETTING MARRIED</p>
+    <h1 class="hero__names"><span>Mason</span><em>&amp;</em><span>Nora</span></h1>
+    <p class="hero__date">2026 · 11 · 10</p>
+    <p class="hero__place">三亚 · 亚龙湾瑞吉酒店</p>
+  </div>
+</header>
+
+<!-- ===== 倒计时 ===== -->
+<section class="section countdown" id="countdown">
+  <div class="reveal">
+    <p class="section__eyebrow">COUNTDOWN</p>
+    <h2 class="section__title">距离我们再次相聚</h2>
+    <div class="cd" id="cd">
+      <div class="cd__unit"><span class="cd__num" id="cdDays">--</span><span class="cd__label">天</span></div>
+      <div class="cd__sep">:</div>
+      <div class="cd__unit"><span class="cd__num" id="cdHours">--</span><span class="cd__label">时</span></div>
+      <div class="cd__sep">:</div>
+      <div class="cd__unit"><span class="cd__num" id="cdMins">--</span><span class="cd__label">分</span></div>
+      <div class="cd__sep">:</div>
+      <div class="cd__unit"><span class="cd__num" id="cdSecs">--</span><span class="cd__label">秒</span></div>
+    </div>
+    <p class="cd__note" id="cdNote">2026年11月10日 15:00 · 三亚亚龙湾瑞吉酒店</p>
+  </div>
+</section>
+
+<!-- ===== 邀请函（留白，内容稍后提供） ===== -->
+<section class="section invitation" id="invitation">
+  <div class="reveal invitation__card">
+    <div class="invitation__corner invitation__corner--tl"></div>
+    <div class="invitation__corner invitation__corner--tr"></div>
+    <div class="invitation__corner invitation__corner--bl"></div>
+    <div class="invitation__corner invitation__corner--br"></div>
+    <p class="section__eyebrow">INVITATION</p>
+    <h2 class="script">致我们最亲爱的你</h2>
+    <div class="invitation__body" data-placeholder="invitation">
+      <p>亲爱的家人与朋友们，</p>
+      <p class="placeholder-note">（邀请函正文待补充——你提供文案后，我会替换这里的内容。）</p>
+      <p class="invitation__sign">—— Mason &amp; Nora</p>
+    </div>
+  </div>
+</section>
+</div><!-- /.topshot -->
+
+<main>
+
+<!-- ===== 婚礼信息 ===== -->
+<section class="section details" id="details">
+  <div class="reveal">
+    <p class="section__eyebrow">THE DETAILS</p>
+    <h2 class="section__title">婚礼信息</h2>
+    <div class="details__grid">
+      <div class="info-card">
+        <div class="info-card__icon">
+          <svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="18" fill="none" stroke="currentColor" stroke-width="2"/><path d="M24 14v10l7 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </div>
+        <h3>日期</h3>
+        <p>2026年11月10日</p>
+        <p class="info-card__sub">15:00</p>
+      </div>
+      <div class="info-card">
+        <div class="info-card__icon">
+          <svg viewBox="0 0 48 48"><path d="M24 6c-7 0-12 5-12 12 0 9 12 24 12 24s12-15 12-24c0-7-5-12-12-12Z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="24" cy="18" r="4.5" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+        </div>
+        <h3>地点</h3>
+        <p>三亚亚龙湾瑞吉酒店</p>
+        <p class="info-card__sub">The St. Regis Sanya Yalong Bay</p>
+      </div>
+      <div class="info-card">
+        <div class="info-card__icon">
+          <svg viewBox="0 0 48 48"><path d="M10 20h28M14 20l2 18h16l2-18M18 20v-4a6 6 0 0 1 12 0v4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>着装</h3>
+        <p>详见下方着装要求</p>
+        <p class="info-card__sub"><a href="#dresscode">查看 →</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 出席回复 RSVP ===== -->
+<section class="section rsvp" id="rsvp">
+  <div class="reveal rsvp__card">
+    <p class="section__eyebrow">R · S · V · P</p>
+    <h2 class="script">期待与你相聚</h2>
+    <p class="rsvp__lead">
+      为了给每一位宾客准备好座位与餐食，
+      <br />恳请你在 <strong>2026 年 10 月 10 日</strong> 前回复是否出席。
+    </p>
+    <!-- 替换处 ①：把 href 换成你的问卷链接 -->
+    <a class="rsvp__btn" href="https://wj.qq.com/s2/26889915/8018/" target="_blank" rel="noopener">
+      填写出席回复
+    </a>
+
+    <!-- 替换处 ②：把下面的二维码图片换成你的问卷二维码；不需要二维码可整段删除 -->
+    <figure class="rsvp__qr">
+      <img class="map-zoom" src="酒店信息/RSVP二维码占位.png" alt="出席回复问卷二维码" loading="lazy"
+           onerror="this.closest('.rsvp__qr').style.display='none'" />
+      <figcaption>微信扫码填写</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ===== 婚礼流程时间轴 ===== -->
+<section class="section timeline" id="timeline">
+  <div class="reveal">
+    <p class="section__eyebrow">THE JOURNEY</p>
+    <h2 class="section__title">婚礼流程</h2>
+    <p class="section__lead">两天的相聚，从海风开始。</p>
+  </div>
+
+  <div class="tl">
+
+    <!-- 11.9 入住 -->
+    <article class="tl__item reveal">
+      <div class="tl__art">
+        <img class="tl__photo" src="婚礼流程图/01-入住.png" alt="三亚亚龙湾瑞吉酒店水彩外景" loading="lazy" />
+      </div>
+      <div class="tl__text">
+        <span class="tl__time">11.9　15:00 PM</span>
+        <h3 class="tl__heading">宾客入住</h3>
+        <p>抵达三亚亚龙湾瑞吉酒店，办理入住，放下行李，去拥抱海风与椰林。</p>
+      </div>
+    </article>
+
+    <!-- 11.10 迎宾签到 -->
+    <article class="tl__item tl__item--reverse reveal">
+      <div class="tl__art">
+        <img class="tl__photo" src="婚礼流程图/02-签到.png" alt="椰子树下的甜品台与两只狗狗" loading="lazy" />
+      </div>
+      <div class="tl__text">
+        <span class="tl__time">11.10　15:00 PM</span>
+        <h3 class="tl__heading">迎宾签到</h3>
+        <p>椰子树下的甜品台前签到，还有两位毛孩子迎接你——记得和它们合个影。</p>
+      </div>
+    </article>
+
+    <!-- 仪式 -->
+    <article class="tl__item reveal">
+      <div class="tl__art">
+        <img class="tl__photo" src="婚礼流程图/03-仪式.png" alt="椰林海边新人接吻仪式" loading="lazy" />
+      </div>
+      <div class="tl__text">
+        <span class="tl__time">11.10　16:18 PM</span>
+        <h3 class="tl__heading">婚礼仪式</h3>
+        <p>草坪之后是椰林与大海，在最美的光线里，我们许下一生的承诺，封存一个吻。</p>
+      </div>
+    </article>
+
+    <!-- 晚宴 -->
+    <article class="tl__item tl__item--reverse reveal">
+      <div class="tl__art">
+        <img class="tl__photo" src="婚礼流程图/04-晚宴.png" alt="烛光晚宴餐桌摆台" loading="lazy" />
+      </div>
+      <div class="tl__text">
+        <span class="tl__time">11.10　17:50 PM</span>
+        <h3 class="tl__heading">浪漫晚宴</h3>
+        <p>烛光、美酒与鲜花相伴，在星空下举杯，与所爱之人共享一场温柔的盛宴。</p>
+      </div>
+    </article>
+
+    <!-- After Party -->
+    <article class="tl__item reveal">
+      <div class="tl__art">
+        <img class="tl__photo" src="婚礼流程图/05-afterparty.png" alt="戴墨镜的新人与伴郎伴娘" loading="lazy" />
+      </div>
+      <div class="tl__text">
+        <span class="tl__time">11.10　19:30 PM</span>
+        <h3 class="tl__heading">After Party</h3>
+        <p>戴上墨镜，放下拘谨！新人与伴郎伴娘一起跳进舞池，让这个夜晚尽情狂欢到最后。</p>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ===== 着装要求（留白） ===== -->
+<section class="section dresscode" id="dresscode">
+  <div class="reveal">
+    <p class="section__eyebrow">DRESS CODE</p>
+    <h2 class="section__title">着装要求</h2>
+    <div class="placeholder-box" data-placeholder="dresscode">
+      <svg viewBox="0 0 48 48" width="40" height="40"><path d="M16 8l8 6 8-6 6 6-6 6v18H16V20l-6-6 6-6Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+      <p>着装要求内容稍后补充。</p>
+      <span class="placeholder-note">你提供文案后，我会把男士/女士着装、色系建议、配饰等放在这里。</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 酒店信息 ===== -->
+<section class="section hotel" id="hotel">
+  <div class="reveal">
+    <div class="hotel-hero">
+      <img src="酒店信息/酒店前景.webp" alt="三亚亚龙湾瑞吉度假酒店全景" loading="lazy" />
+      <div class="hotel-hero__overlay">
+        <img class="hotel-hero__logo" src="酒店信息/酒店logo-white.png" alt="三亚亚龙湾瑞吉度假酒店" loading="lazy" />
+      </div>
+    </div>
+
+    <!-- 欢迎 + 管家服务 -->
+    <div class="hotel-welcome">
+      <p>感谢您选择入住<strong>三亚亚龙湾瑞吉度假酒店</strong>。这里是瑞吉管家服务中心团队，祝您在三亚瑞吉度过精致优雅的每一天。</p>
+      <div class="hotel-contact">
+        <div class="hotel-contact__item">
+          <span class="hotel-contact__label">房间内联系管家</span>
+          <span class="hotel-contact__val">电话拨 “0”</span>
+        </div>
+        <span class="hotel-contact__div"></span>
+        <div class="hotel-contact__item">
+          <span class="hotel-contact__label">酒店管家服务中心</span>
+          <a class="hotel-contact__val" href="tel:089888555555">0898-8855 5555</a>
+        </div>
+      </div>
+      <p class="hotel-note">大堂位于 6 楼，早餐在大堂正下方 3 楼。</p>
+    </div>
+
+    <!-- 餐饮 -->
+    <div class="hotel-block">
+      <h3 class="hotel-block__title"><span>餐饮</span></h3>
+      <div class="dine">
+        <div class="dine__item">
+          <div class="dine__row"><span class="dine__name">秀餐厅</span><span class="dine__time">07:00 – 11:00</span></div>
+          <div class="dine__desc">美味早餐 · 特色自助餐</div>
+          <div class="dine__extra">高峰 09:00–10:00，建议错峰用餐</div>
+        </div>
+        <div class="dine__item">
+          <div class="dine__row"><span class="dine__name">铭轩中餐厅</span><span class="dine__time">12:00–14:30 · 18:00–21:30</span></div>
+          <div class="dine__desc">琼肴美食</div>
+          <div class="dine__extra">午餐 / 晚餐</div>
+        </div>
+        <div class="dine__item">
+          <div class="dine__row"><span class="dine__name">宴悦海鲜餐厅</span><span class="dine__time">12:00–17:00 · 18:00–22:00</span></div>
+          <div class="dine__desc">战斧牛排 · 海鲜 · 西餐</div>
+          <div class="dine__extra">午餐 / 晚餐</div>
+        </div>
+        <div class="dine__item">
+          <div class="dine__row"><span class="dine__name">悦海吧</span><span class="dine__time">16:00 – 24:00</span></div>
+          <div class="dine__desc">沙滩音乐餐吧</div>
+          <div class="dine__extra">16:00–18:00 鸡尾酒/小食 · 18:00–22:00 海南火锅/BBQ · 22:00–24:00 鸡尾酒/小食</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 泳池与康乐 -->
+    <div class="hotel-block">
+      <h3 class="hotel-block__title"><span>泳池 · 康乐</span></h3>
+      <div class="dine">
+        <div class="dine__item">
+          <div class="dine__row"><span class="dine__name">中央恒温泳池</span><span class="dine__time">08:00 – 22:00</span></div>
+          <div class="dine__desc">3 楼直通海边沙滩</div>
+          <div class="dine__extra">每周一/二/四/五/六 11:00、15:00、16:00、17:00（各 30 分钟）可与“美人鱼”同游</div>
+        </div>
+        <div class="dine__item">
+          <div class="dine__row"><span class="dine__name">家庭遮阳泳池</span><span class="dine__time">08:00 – 18:00</span></div>
+          <div class="dine__desc">小朋友畅享水滑梯</div>
+          <div class="dine__extra">亲子专属</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 西翼一楼设施 -->
+    <div class="hotel-block">
+      <h3 class="hotel-block__title"><span>西翼一楼设施</span></h3>
+      <ul class="facility-list">
+        <li><strong>瑞妍水疗</strong>采用瑞士活细胞科技品牌瑞妍产品　·　10:00 – 22:00</li>
+        <li><strong>健身房</strong>24 小时开放　·　22:00 – 07:00 需刷房卡进入</li>
+        <li><strong>瑞吉私家影院</strong>影片与国内院线同步　·　13:00 – 22:00　·　98 元/位（排期详询管家或 8855 5555 转康乐部）</li>
+        <li><strong>儿童俱乐部</strong>丰富的儿童/成人康乐活动　·　09:00 – 20:00（预约详询管家或 8855 5555 转康乐部）</li>
+        <li><strong>海岛风旅拍</strong>入住期间专属 30 分钟旅拍一次，持房卡免费预约 <a href="tel:13379817715">133 7981 7715</a>，赠 10 张底片 + 15 秒小视频（每间房限 1 次，不可叠加）</li>
+        <li><strong>免费停车</strong>可在前台 / 礼宾 / 管家台登记车牌</li>
+      </ul>
+    </div>
+
+    <!-- 地图 -->
+    <div class="hotel-block">
+      <h3 class="hotel-block__title"><span>酒店地图</span></h3>
+      <div class="hotel-maps">
+        <figure class="map-fig">
+          <img class="map-zoom" src="酒店信息/酒店地图1.jpg" alt="瑞吉酒店全景地图与设施图例" loading="lazy" />
+          <figcaption>全景地图 · 设施图例（点击放大）</figcaption>
+        </figure>
+        <figure class="map-fig">
+          <img class="map-zoom" src="酒店信息/酒店地图2.jpg" alt="海上庄园度假生活活动地图" loading="lazy" />
+          <figcaption>海上庄园 · 度假活动地图（点击放大）</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <!-- CDF 穿梭巴士 -->
+    <div class="hotel-block">
+      <h3 class="hotel-block__title"><span>CDF 中免礼遇 · 免费穿梭巴士</span></h3>
+      <div class="shuttle">
+        <div class="shuttle__info">
+          <p>扫码可享 CDF 中免海南折扣礼遇，并预约免费穿梭巴士。<strong>请提前一天预约。</strong></p>
+          <div class="shuttle__times">
+            <div><span class="shuttle__dir">酒店出发</span>09:00　·　11:30　·　14:20</div>
+            <div><span class="shuttle__dir">返程</span>15:45　·　20:15</div>
+          </div>
+        </div>
+        <a class="qr" href="酒店信息/CDF中免穿梭巴士预约二维码.jpg" target="_blank" rel="noopener">
+          <img src="酒店信息/CDF中免穿梭巴士预约二维码.jpg" alt="CDF 中免穿梭巴士预约二维码" loading="lazy" />
+          <span>扫码预约</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="hotel-cta">
+      <a class="btn" href="https://hotel.xmnjdwx.com/template/?flat_id=2&hotel_id=149&uid=1389250&id=125&tem=15&prev_uid=1389250&s_u=1389250&f_u=1389250" target="_blank" rel="noopener">查看酒店更详细介绍 →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 周边旅游攻略（留白） ===== -->
+<section class="section travel" id="travel">
+  <div class="reveal">
+    <p class="section__eyebrow">EXPLORE SANYA</p>
+    <h2 class="section__title">周边旅游攻略</h2>
+    <div class="placeholder-box" data-placeholder="travel">
+      <svg viewBox="0 0 48 48" width="40" height="40"><circle cx="24" cy="20" r="10" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M24 30v10M14 24h20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M22 14l4 2-4 2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+      <p>周边游玩攻略稍后补充。</p>
+      <span class="placeholder-note">将包含：景点推荐 / 美食 / 出行贴士 / 行程建议等。</span>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ===== 页脚 ===== -->
+<footer class="footer">
+  <div class="footer__names script">Mason &amp; Nora</div>
+  <p class="footer__date">2026.11.10 · 三亚亚龙湾瑞吉酒店</p>
+  <p class="footer__heart">With love &amp; the sea breeze 🌊</p>
+</footer>
+
+<!-- ===== 图片放大遮罩（地图点击放大，无需新开页面） ===== -->
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <button class="lightbox__close" id="lightboxClose" aria-label="关闭">&times;</button>
+  <img class="lightbox__img" id="lightboxImg" src="" alt="" />
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

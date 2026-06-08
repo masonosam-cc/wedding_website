@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="340" viewBox="0 0 1440 340" preserveAspectRatio="xMidYMax slice">
+  <defs>
+    <g id="palm">
+      <!-- 树干 -->
+      <path d="M-6,0 Q-2,-80 -3,-150 L3,-150 Q2,-80 6,0 Z"/>
+      <!-- 椰叶 -->
+      <path d="M0,-150 C-40,-150 -72,-130 -98,-100 C-66,-123 -35,-129 0,-142 Z"/>
+      <path d="M0,-150 C-36,-181 -56,-206 -62,-232 C-46,-206 -25,-181 0,-142 Z"/>
+      <path d="M0,-150 C-12,-186 -8,-222 0,-248 C8,-222 12,-186 0,-142 Z"/>
+      <path d="M0,-150 C36,-181 56,-206 62,-232 C46,-206 25,-181 0,-142 Z"/>
+      <path d="M0,-150 C40,-150 72,-130 98,-100 C66,-123 35,-129 0,-142 Z"/>
+      <path d="M0,-150 C-56,-162 -88,-152 -114,-136 C-82,-147 -46,-151 0,-145 Z"/>
+      <path d="M0,-150 C56,-162 88,-152 114,-136 C82,-147 46,-151 0,-145 Z"/>
+      <!-- 椰子 -->
+      <circle cx="-7" cy="-145" r="5"/>
+      <circle cx="6" cy="-143" r="5"/>
+    </g>
+  </defs>
+
+  <!-- 远层（更淡更小） -->
+  <g fill="#1f6f72" fill-opacity="0.07">
+    <use href="#palm" transform="translate(220,330) scale(0.7)"/>
+    <use href="#palm" transform="translate(680,330) scale(0.62)"/>
+    <use href="#palm" transform="translate(1120,330) scale(0.72)"/>
+    <use href="#palm" transform="translate(1380,330) scale(0.6)"/>
+  </g>
+
+  <!-- 近层 -->
+  <g fill="#1f6f72" fill-opacity="0.13">
+    <use href="#palm" transform="translate(110,340) scale(1.05)"/>
+    <use href="#palm" transform="translate(360,332) scale(0.85)"/>
+    <use href="#palm" transform="translate(560,344) scale(1.25)"/>
+    <use href="#palm" transform="translate(840,334) scale(0.92)"/>
+    <use href="#palm" transform="translate(1050,342) scale(1.15)"/>
+    <use href="#palm" transform="translate(1300,332) scale(0.82)"/>
+  </g>
+</svg>

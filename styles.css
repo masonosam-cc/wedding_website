@@ -1,0 +1,407 @@
+/* ===================== 基础 ===================== */
+:root{
+  --sand:#f5ecdc;
+  --sand-deep:#ead8b8;
+  --ink:#3a3530;
+  --ink-soft:#6f6657;
+  --teal:#2f8f8f;
+  --teal-deep:#1f6f72;
+  --coral:#e08aa0;
+  --gold:#c8a262;
+  --green:#3f8f5b;
+  --cream:#fffaf2;
+  --shadow:0 18px 50px rgba(60,53,48,.12);
+  --serif:"Cormorant Garamond","Noto Serif SC",serif;
+  --sc:"Noto Serif SC",serif;
+  --script:"Dancing Script",cursive;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:var(--sc);
+  color:var(--ink);
+  background:var(--sand);
+  line-height:1.75;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none;}
+img,svg{display:block;max-width:100%;}
+
+/* ===================== 导航 ===================== */
+.nav{
+  position:fixed;top:0;left:0;width:100%;z-index:50;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:16px clamp(20px,5vw,60px);
+  transition:background .4s,box-shadow .4s,padding .4s;
+}
+.nav--solid{
+  background:rgba(255,250,242,.92);
+  backdrop-filter:blur(10px);
+  box-shadow:0 6px 24px rgba(60,53,48,.08);
+  padding-top:12px;padding-bottom:12px;
+}
+.nav__brand{
+  font-family:var(--serif);font-size:1.6rem;letter-spacing:.12em;
+  color:var(--teal-deep);font-weight:600;
+}
+.nav__brand span{color:var(--gold);}
+.nav__links{display:flex;gap:clamp(14px,2vw,30px);list-style:none;}
+.nav__links a{
+  font-size:.92rem;letter-spacing:.06em;color:var(--ink-soft);
+  position:relative;padding:4px 0;transition:color .3s;
+}
+.nav__links a::after{
+  content:"";position:absolute;left:0;bottom:0;width:0;height:1.5px;
+  background:var(--gold);transition:width .3s;
+}
+.nav__links a:hover{color:var(--teal-deep);}
+.nav__links a:hover::after{width:100%;}
+.nav__toggle{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px;}
+.nav__toggle span{width:24px;height:2px;background:var(--ink);transition:.3s;}
+
+/* ===================== 主图背景区（首屏+倒计时+邀请函共享水彩） ===================== */
+/* 整张竖图按全宽平铺，随滚动逐段展现；上下边缘近白，无缝接米白底 */
+.topshot{
+  position:relative;
+  /* 至少为整张图的高度（图比例 高/宽=1.334），确保全图完整显示 */
+  min-height:133.4vw;
+  display:flex;flex-direction:column;justify-content:space-between;
+  background:url("请柬主图/主图背景.png") top center / 100% auto no-repeat;
+  background-color:#fcfbfb;
+}
+.topshot .section{background:transparent;}
+
+/* ===================== HERO ===================== */
+.hero{position:relative;height:min(96svh,133.4vw);min-height:460px;display:flex;align-items:center;justify-content:center;}
+/* 柔光面纱：顶部加淡米色让名字更清晰，下方保持画面通透 */
+.hero__veil{position:absolute;inset:0;background:
+  linear-gradient(180deg,rgba(255,252,247,.62) 0%,rgba(255,252,247,.18) 14%,transparent 30%);
+}
+.floatY{animation:floatY 5s ease-in-out infinite;}
+@keyframes floatY{0%,100%{transform:translateY(0);}50%{transform:translateY(-8px);}}
+
+.hero__content{position:absolute;top:0;left:0;right:0;z-index:5;text-align:center;color:var(--teal-deep);padding:clamp(54px,9vh,118px) 20px 0;}
+.hero__eyebrow{font-family:var(--serif);letter-spacing:.5em;font-size:.95rem;color:var(--ink-soft);margin-bottom:22px;padding-left:.5em;}
+.hero__names{
+  font-family:var(--serif);font-weight:500;line-height:1;
+  font-size:clamp(3.8rem,13.5vw,9.8rem);
+  display:flex;align-items:center;justify-content:center;gap:.18em;flex-wrap:wrap;
+  color:#2c6f72;text-shadow:0 2px 6px rgba(255,252,247,.95),0 6px 26px rgba(255,252,247,.85);
+}
+.hero__names em{font-family:var(--script);font-style:normal;color:var(--coral);font-size:.55em;}
+.hero__date{font-family:var(--serif);font-size:clamp(1.6rem,4.4vw,2.6rem);letter-spacing:.3em;margin-top:22px;color:var(--ink);text-shadow:0 2px 10px rgba(255,252,247,.9);}
+.hero__place{font-size:clamp(1.1rem,2.8vw,1.5rem);letter-spacing:.18em;margin-top:12px;color:var(--ink-soft);text-shadow:0 2px 10px rgba(255,252,247,.9);}
+/* 直接落在水彩图上的文字：加米白光晕保证清晰 */
+.topshot .section__eyebrow,
+.topshot .countdown .section__title,
+.topshot .cd__note,
+.hero__eyebrow{text-shadow:0 2px 12px rgba(255,252,247,.95),0 1px 4px rgba(255,252,247,.95);}
+
+/* 桌面端：把三段精确摆放到水彩图的指定区域 */
+@media(min-width:761px){
+  .topshot{display:block;height:133.4vw;}
+  .topshot > .hero{position:absolute;top:0;left:0;right:0;height:100svh;}
+  /* 倒计时：海水区域 */
+  .topshot > .countdown{position:absolute;top:47%;left:0;right:0;padding-top:0;padding-bottom:0;}
+  /* 邀请函：右移并落到海水区域 */
+  .topshot > .invitation{position:absolute;top:85%;left:auto;right:5%;width:min(560px,48%);padding:0 16px;}
+}
+
+/* ===================== 通用 section ===================== */
+.section{padding:clamp(70px,11vw,140px) clamp(20px,6vw,80px);position:relative;}
+.section__eyebrow{font-family:var(--serif);letter-spacing:.45em;font-size:.78rem;color:var(--gold);text-align:center;margin-bottom:14px;padding-left:.45em;}
+.section__title{font-family:var(--serif);font-weight:600;font-size:clamp(2rem,5vw,3.2rem);text-align:center;color:var(--teal-deep);margin-bottom:10px;}
+.section__lead{text-align:center;color:var(--ink-soft);font-size:1.05rem;letter-spacing:.05em;margin-bottom:40px;}
+.script{font-family:var(--script);}
+
+/* reveal 动画 */
+.reveal{opacity:0;transform:translateY(34px);transition:opacity .9s ease,transform .9s ease;}
+.reveal.in{opacity:1;transform:none;}
+
+/* ===================== 倒计时 ===================== */
+.countdown{background:linear-gradient(180deg,var(--sand) 0%,var(--cream) 100%);text-align:center;}
+.cd{display:flex;align-items:center;justify-content:center;gap:clamp(8px,2vw,22px);margin:34px 0 18px;flex-wrap:wrap;}
+.cd__unit{
+  background:#fff;border:1px solid var(--sand-deep);border-radius:18px;
+  padding:clamp(14px,2.4vw,26px) clamp(14px,2.6vw,30px);min-width:clamp(72px,12vw,120px);
+  box-shadow:var(--shadow);display:flex;flex-direction:column;gap:6px;
+}
+.cd__num{font-family:var(--serif);font-weight:600;font-size:clamp(2.2rem,6vw,4rem);line-height:1;color:var(--teal-deep);}
+.cd__label{font-size:.85rem;letter-spacing:.3em;color:var(--ink-soft);padding-left:.3em;}
+.cd__sep{font-family:var(--serif);font-size:clamp(1.6rem,4vw,3rem);color:var(--gold);align-self:flex-start;margin-top:clamp(8px,1.5vw,18px);}
+.cd__note{color:var(--ink-soft);letter-spacing:.08em;font-size:.98rem;}
+
+/* ===================== 邀请函 ===================== */
+.invitation{background:var(--teal-deep);background-image:radial-gradient(circle at 20% 20%,rgba(255,255,255,.08),transparent 50%);}
+.invitation__card{
+  position:relative;max-width:720px;margin:0 auto;background:var(--cream);
+  padding:clamp(40px,7vw,80px);border-radius:6px;box-shadow:0 30px 70px rgba(0,0,0,.25);text-align:center;
+}
+.invitation__card .section__eyebrow{color:var(--gold);}
+.invitation__card .script{font-size:clamp(2rem,5vw,3.2rem);color:var(--teal-deep);margin-bottom:26px;}
+.invitation__body p{color:var(--ink);font-size:1.08rem;margin-bottom:14px;letter-spacing:.04em;}
+.invitation__sign{font-family:var(--serif);font-size:1.4rem;color:var(--teal-deep);margin-top:24px;letter-spacing:.1em;}
+.invitation__corner{position:absolute;width:34px;height:34px;border-color:var(--gold);}
+.invitation__corner--tl{top:18px;left:18px;border-top:2px solid;border-left:2px solid;}
+.invitation__corner--tr{top:18px;right:18px;border-top:2px solid;border-right:2px solid;}
+.invitation__corner--bl{bottom:18px;left:18px;border-bottom:2px solid;border-left:2px solid;}
+.invitation__corner--br{bottom:18px;right:18px;border-bottom:2px solid;border-right:2px solid;}
+
+/* ===================== 详情卡片 ===================== */
+.details{background:var(--cream);}
+.details__grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:26px;max-width:980px;margin:46px auto 0;}
+.info-card{
+  background:#fff;border:1px solid var(--sand-deep);border-radius:20px;padding:38px 26px;text-align:center;
+  box-shadow:var(--shadow);transition:transform .4s,box-shadow .4s;
+}
+.info-card:hover{transform:translateY(-6px);box-shadow:0 26px 60px rgba(60,53,48,.16);}
+.info-card__icon{width:58px;height:58px;margin:0 auto 18px;color:var(--teal);}
+.info-card h3{font-family:var(--serif);font-size:1.5rem;color:var(--teal-deep);margin-bottom:8px;letter-spacing:.05em;}
+.info-card p{color:var(--ink);font-size:1.02rem;}
+.info-card__sub{color:var(--ink-soft);font-size:.9rem;letter-spacing:.04em;}
+.info-card__sub a{color:var(--gold);border-bottom:1px solid transparent;transition:border .3s;}
+.info-card__sub a:hover{border-color:var(--gold);}
+
+/* ===================== 时间轴 ===================== */
+.timeline{background:linear-gradient(180deg,var(--cream) 0%,var(--sand) 100%);}
+.tl{position:relative;max-width:920px;margin:30px auto 0;}
+.tl::before{content:"";position:absolute;left:50%;top:0;bottom:0;width:2px;background:linear-gradient(var(--gold),var(--teal),var(--coral));transform:translateX(-50%);opacity:.4;}
+.tl__item{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,4vw,56px);align-items:center;margin-bottom:clamp(50px,7vw,90px);position:relative;}
+.tl__item::after{content:"";position:absolute;left:50%;top:50%;width:16px;height:16px;background:#fff;border:3px solid var(--gold);border-radius:50%;transform:translate(-50%,-50%);box-shadow:0 0 0 6px var(--sand);}
+.tl__art{order:1;}
+.tl__text{order:2;text-align:left;}
+.tl__item--reverse .tl__art{order:2;}
+.tl__item--reverse .tl__text{order:1;text-align:right;}
+.scene{border-radius:18px;box-shadow:var(--shadow);width:100%;height:auto;}
+/* 手绘水彩配图：白底/透明底，自然融入，不加边框阴影 */
+.tl__photo{width:100%;height:auto;display:block;border-radius:14px;}
+.tl__time{display:inline-block;font-family:var(--serif);letter-spacing:.18em;color:var(--gold);font-size:1.05rem;margin-bottom:6px;}
+.tl__heading{font-family:var(--serif);font-size:clamp(1.5rem,3.4vw,2.2rem);color:var(--teal-deep);margin-bottom:10px;}
+.tl__text p{color:var(--ink-soft);font-size:1.04rem;letter-spacing:.03em;}
+
+/* 场景内动效 */
+.scene-plane{animation:scenePlane 6s linear infinite;}
+@keyframes scenePlane{0%{transform:translate(-60px,30px);opacity:0;}15%{opacity:1;}85%{opacity:1;}100%{transform:translate(260px,-10px);opacity:0;}}
+.scene-dog{transform-origin:bottom center;animation:wiggle 2.4s ease-in-out infinite;}
+.scene-dog--2{animation-delay:-1.2s;}
+@keyframes wiggle{0%,100%{transform:rotate(0);}50%{transform:rotate(-3deg);}}
+.scene-flame path{transform-origin:160px 86px;animation:flicker 1.6s ease-in-out infinite;}
+@keyframes flicker{0%,100%{transform:scaleY(1) translateY(0);opacity:1;}50%{transform:scaleY(1.12) translateY(-2px);opacity:.85;}}
+.scene-lights circle{animation:twinkle 2s ease-in-out infinite;}
+.scene-lights circle:nth-child(2){animation-delay:.4s;}
+.scene-lights circle:nth-child(3){animation-delay:.8s;}
+.scene-lights circle:nth-child(4){animation-delay:1.2s;}
+.scene-lights circle:nth-child(5){animation-delay:1.6s;}
+@keyframes twinkle{0%,100%{opacity:.4;}50%{opacity:1;}}
+.scene-couple{transform-origin:center bottom;animation:floatY 4s ease-in-out infinite;}
+.dancer{transform-origin:bottom center;animation:dance 1s ease-in-out infinite;}
+.dancer--2{animation-delay:-.25s;}
+.dancer--3{animation-delay:-.5s;}
+.dancer--4{animation-delay:-.75s;}
+@keyframes dance{0%,100%{transform:translateY(0) rotate(-2deg);}50%{transform:translateY(-6px) rotate(2deg);}}
+.scene-beams{transform-origin:160px 220px;animation:beam 4s ease-in-out infinite;}
+@keyframes beam{0%,100%{transform:rotate(-4deg);}50%{transform:rotate(4deg);}}
+.scene-confetti rect{animation:fall 3s linear infinite;}
+@keyframes fall{0%{transform:translateY(0);opacity:1;}100%{transform:translateY(40px);opacity:0;}}
+
+/* ===================== 留白占位 ===================== */
+.dresscode{background:var(--sand);}
+.hotel{background:var(--cream);}
+.travel{background:linear-gradient(180deg,var(--sand) 0%,var(--sand-deep) 100%);}
+.placeholder-box{
+  max-width:720px;margin:30px auto 0;background:#fff;border:1.5px dashed var(--sand-deep);
+  border-radius:20px;padding:clamp(36px,6vw,64px);text-align:center;color:var(--ink-soft);
+  display:flex;flex-direction:column;align-items:center;gap:14px;box-shadow:var(--shadow);
+}
+.placeholder-box svg{color:var(--teal);}
+.placeholder-box p{font-size:1.15rem;color:var(--ink);}
+.placeholder-note{font-size:.92rem;color:var(--ink-soft);letter-spacing:.04em;}
+
+/* ===================== 酒店信息 ===================== */
+.hotel{
+  position:relative;padding-top:0;
+  background:
+    radial-gradient(circle at 15% 30%,rgba(200,162,98,.10),transparent 45%),
+    radial-gradient(circle at 85% 100%,rgba(47,143,143,.08),transparent 50%),
+    linear-gradient(180deg,var(--cream) 0%,var(--sand) 100%);
+}
+/* 全宽实景横幅 */
+.hotel-hero{
+  position:relative;width:100vw;margin-left:calc(50% - 50vw);
+  height:clamp(320px,52vh,560px);overflow:hidden;
+  display:flex;align-items:flex-end;justify-content:center;
+  margin-bottom:clamp(50px,8vw,90px);
+}
+.hotel-hero > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+.hotel-hero::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(20,52,54,.78) 0%,rgba(20,52,54,.25) 38%,rgba(20,52,54,.10) 70%,transparent 100%);
+}
+.hotel-hero__overlay{position:relative;z-index:2;text-align:center;color:#fff;padding:0 24px clamp(30px,6vw,60px);}
+.hotel-hero__eyebrow{color:rgba(255,255,255,.9);margin-bottom:18px;}
+/* 白色透明底 logo（已预处理），加柔和投影增强可读性 */
+.hotel-hero__logo{
+  width:min(680px,92%);margin:0 auto;
+  filter:drop-shadow(0 2px 16px rgba(0,0,0,.4));
+}
+.hotel-logo{width:min(420px,78%);margin:8px auto 30px;opacity:.92;}
+
+.hotel-welcome{max-width:720px;margin:0 auto 56px;text-align:center;}
+.hotel-welcome p{color:var(--ink-soft);font-size:1.08rem;letter-spacing:.04em;line-height:1.9;}
+.hotel-welcome strong{color:var(--teal-deep);font-weight:600;}
+.hotel-contact{display:flex;gap:clamp(20px,5vw,56px);justify-content:center;align-items:center;flex-wrap:wrap;margin:30px 0 14px;}
+.hotel-contact__item{text-align:center;}
+.hotel-contact__div{width:1px;height:46px;background:linear-gradient(var(--gold),transparent);opacity:.5;}
+.hotel-contact__label{display:block;font-size:.78rem;letter-spacing:.18em;color:var(--ink-soft);margin-bottom:6px;}
+.hotel-contact__val{font-family:var(--serif);font-size:1.55rem;color:var(--teal-deep);font-weight:600;letter-spacing:.04em;border-bottom:1px solid transparent;transition:border .3s;}
+a.hotel-contact__val:hover{border-color:var(--gold);}
+.hotel-note{font-size:.94rem;color:var(--ink-soft);letter-spacing:.06em;}
+
+.hotel-block{max-width:880px;margin:0 auto 60px;}
+/* 标题两侧金色细线 */
+.hotel-block__title{
+  display:flex;align-items:center;justify-content:center;gap:18px;
+  font-family:var(--serif);font-size:1.55rem;color:var(--teal-deep);
+  letter-spacing:.14em;font-weight:600;margin-bottom:30px;
+}
+.hotel-block__title::before,.hotel-block__title::after{
+  content:"";height:1px;width:clamp(30px,8vw,80px);
+  background:linear-gradient(90deg,transparent,var(--gold));
+}
+.hotel-block__title::after{background:linear-gradient(90deg,var(--gold),transparent);}
+
+/* 菜单式列表：无白框，靠虚线分隔 */
+.dine{display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:6px 48px;}
+.dine__item{padding:18px 4px;border-bottom:1px solid rgba(200,162,98,.28);}
+.dine__row{display:flex;align-items:baseline;justify-content:space-between;gap:14px;}
+.dine__name{font-family:var(--serif);font-size:1.4rem;color:var(--ink);letter-spacing:.04em;white-space:nowrap;}
+.dine__time{font-family:var(--serif);font-size:1.05rem;color:var(--teal);letter-spacing:.05em;text-align:right;}
+.dine__desc{color:var(--gold);font-size:.9rem;letter-spacing:.08em;margin-top:4px;}
+.dine__extra{color:var(--ink-soft);font-size:.9rem;line-height:1.7;margin-top:6px;}
+
+/* 设施清单：金色菱形项目符号 + 细分隔线 */
+.facility-list{max-width:760px;margin:0 auto;list-style:none;}
+.facility-list li{
+  position:relative;padding:16px 8px 16px 30px;
+  border-bottom:1px solid rgba(200,162,98,.22);
+  color:var(--ink-soft);font-size:1.02rem;letter-spacing:.03em;line-height:1.8;
+}
+.facility-list li::before{
+  content:"";position:absolute;left:6px;top:24px;width:7px;height:7px;
+  background:var(--gold);transform:rotate(45deg);
+}
+.facility-list strong{color:var(--teal-deep);font-weight:600;margin-right:10px;}
+.facility-list a{color:var(--teal);border-bottom:1px solid currentColor;}
+
+/* 地图：轻边框 + 柔和阴影，标题压在图上 */
+.hotel-maps{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;}
+.map-fig{position:relative;margin:0;display:block;border-radius:14px;overflow:hidden;box-shadow:0 16px 40px rgba(60,53,48,.14);transition:transform .4s;}
+.map-fig:hover{transform:translateY(-4px);}
+.map-fig img{width:100%;height:auto;display:block;cursor:zoom-in;}
+.map-fig figcaption{
+  position:absolute;left:0;right:0;bottom:0;padding:22px 14px 12px;
+  background:linear-gradient(transparent,rgba(31,111,114,.78));
+  color:#fff;font-size:.9rem;letter-spacing:.06em;text-align:center;pointer-events:none;
+}
+
+/* 图片放大遮罩 */
+.lightbox{
+  position:fixed;inset:0;z-index:1000;display:none;
+  align-items:center;justify-content:center;padding:24px;
+  background:rgba(31,28,26,.86);backdrop-filter:blur(4px);cursor:zoom-out;
+}
+.lightbox.open{display:flex;animation:lbFade .25s ease;}
+@keyframes lbFade{from{opacity:0;}to{opacity:1;}}
+.lightbox__img{max-width:96vw;max-height:90vh;border-radius:8px;box-shadow:0 24px 70px rgba(0,0,0,.5);}
+.lightbox__close{
+  position:absolute;top:18px;right:24px;width:46px;height:46px;
+  background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.4);
+  border-radius:50%;color:#fff;font-size:1.8rem;line-height:1;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;transition:background .2s;
+}
+.lightbox__close:hover{background:rgba(255,255,255,.28);}
+@media(prefers-reduced-motion:reduce){.lightbox.open{animation:none;}}
+
+/* ===== 出席回复 RSVP ===== */
+.rsvp{background:linear-gradient(180deg,var(--cream),var(--sand));}
+.rsvp__card{
+  max-width:640px;margin:0 auto;text-align:center;
+  background:rgba(255,255,255,.62);backdrop-filter:blur(6px);
+  border:1px solid rgba(200,162,98,.4);border-radius:24px;
+  box-shadow:var(--shadow);padding:clamp(32px,5vw,56px) clamp(24px,5vw,52px);
+}
+.rsvp__card .script{font-size:clamp(2.4rem,6vw,3.4rem);color:var(--teal-deep);margin:.1em 0 .35em;}
+.rsvp__lead{color:var(--ink-soft);line-height:1.9;font-size:1.05rem;margin-bottom:1.4em;}
+.rsvp__lead strong{color:var(--coral);font-weight:600;}
+.rsvp__points{list-style:none;display:inline-flex;flex-direction:column;gap:.7em;text-align:left;margin:0 auto 1.8em;color:var(--ink);}
+.rsvp__points li{display:flex;align-items:center;gap:.7em;font-size:1.02rem;}
+.rsvp__dot{width:9px;height:9px;border-radius:50%;background:var(--gold);flex:none;}
+.rsvp__btn{
+  display:inline-block;padding:.85em 2.6em;border-radius:999px;
+  background:var(--teal-deep);color:#fff;font-family:var(--sc);font-size:1.08rem;
+  letter-spacing:.08em;text-decoration:none;box-shadow:0 12px 30px rgba(31,111,114,.35);
+  transition:transform .25s,box-shadow .25s,background .25s;
+}
+.rsvp__btn:hover{transform:translateY(-3px);background:var(--teal);box-shadow:0 18px 40px rgba(31,111,114,.45);}
+.rsvp__qr{margin:2em auto 0;display:inline-block;}
+.rsvp__qr img{width:160px;height:160px;object-fit:contain;border-radius:12px;background:#fff;padding:8px;box-shadow:0 8px 22px rgba(60,53,48,.16);}
+.rsvp__qr figcaption{margin-top:.6em;color:var(--ink-soft);font-size:.9rem;letter-spacing:.05em;}
+
+/* 穿梭巴士：半透明磨砂面板，与背景融合 */
+.shuttle{
+  display:flex;gap:34px;align-items:center;justify-content:center;flex-wrap:wrap;
+  background:rgba(255,255,255,.4);backdrop-filter:blur(6px);
+  border:1px solid rgba(200,162,98,.35);border-radius:20px;
+  padding:32px;max-width:740px;margin:0 auto;
+}
+.shuttle__info{flex:1;min-width:240px;}
+.shuttle__info p{color:var(--ink-soft);font-size:1.02rem;margin-bottom:18px;line-height:1.8;}
+.shuttle__info strong{color:var(--coral);}
+.shuttle__times div{display:flex;align-items:center;gap:12px;font-family:var(--serif);font-size:1.2rem;color:var(--teal-deep);margin-bottom:10px;letter-spacing:.06em;}
+.shuttle__dir{display:inline-block;background:rgba(200,162,98,.18);color:var(--ink-soft);font-family:var(--sc);font-size:.78rem;letter-spacing:.1em;padding:3px 12px;border-radius:20px;}
+.qr{display:block;text-align:center;flex-shrink:0;}
+.qr img{width:150px;height:150px;border-radius:12px;border:1px solid rgba(200,162,98,.4);object-fit:cover;background:#fff;}
+.qr span{display:block;margin-top:8px;font-size:.86rem;color:var(--ink-soft);letter-spacing:.06em;}
+
+.hotel-cta{text-align:center;margin-top:24px;}
+.btn{
+  display:inline-block;background:transparent;color:var(--teal-deep);font-family:var(--serif);
+  font-size:1.1rem;letter-spacing:.1em;padding:13px 40px;border:1px solid var(--teal-deep);border-radius:40px;
+  transition:background .3s,color .3s,transform .3s;
+}
+.btn:hover{background:var(--teal-deep);color:#fff;transform:translateY(-2px);}
+
+@media(max-width:760px){
+  .shuttle{flex-direction:column;}
+  .dine__row{flex-direction:column;gap:2px;}
+  .dine__time{text-align:left;}
+}
+
+/* ===================== 页脚 ===================== */
+.footer{background:var(--teal-deep);color:#fff;text-align:center;padding:clamp(50px,8vw,90px) 20px;}
+.footer__names{font-size:clamp(2.4rem,6vw,4rem);color:#fff;margin-bottom:14px;}
+.footer__date{letter-spacing:.18em;color:rgba(255,255,255,.85);}
+.footer__heart{margin-top:10px;font-family:var(--serif);letter-spacing:.1em;color:var(--gold);}
+
+/* ===================== 响应式 ===================== */
+@media(max-width:760px){
+  .nav__toggle{display:flex;}
+  .nav__links{
+    position:absolute;top:100%;right:clamp(20px,5vw,60px);
+    flex-direction:column;gap:18px;background:rgba(255,250,242,.97);
+    padding:22px 30px;border-radius:14px;box-shadow:var(--shadow);
+    transform:translateY(-12px) scale(.96);opacity:0;pointer-events:none;transition:.3s;
+  }
+  .nav__links.open{transform:none;opacity:1;pointer-events:auto;}
+
+  .tl::before{left:22px;}
+  .tl__item,.tl__item--reverse{grid-template-columns:1fr;gap:16px;padding-left:50px;}
+  .tl__item::after,.tl__item--reverse::after{left:22px;}
+  .tl__art,.tl__item--reverse .tl__art{order:1;}
+  .tl__text,.tl__item--reverse .tl__text{order:2;text-align:left;}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;}
+  .reveal{opacity:1;transform:none;}
+}
