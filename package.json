@@ -1,0 +1,10 @@
+{
+  "name": "mason-nora-wedding",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Mason & Nora 婚礼网站（纯静态站点）",
+  "scripts": {
+    "build": "node build.mjs",
+    "start": "node build.mjs && echo \"已生成 dist/，本地预览请直接用浏览器打开 dist/index.html\""
+  }
+}
