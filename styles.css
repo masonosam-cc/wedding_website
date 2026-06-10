@@ -67,7 +67,7 @@ img,svg{display:block;max-width:100%;}
   /* 至少为整张图的高度（图比例 高/宽=1.334），确保全图完整显示 */
   min-height:133.4vw;
   display:flex;flex-direction:column;justify-content:space-between;
-  background:url("请柬主图/主图背景.png") top center / 100% auto no-repeat;
+  background:url("请柬主图/主图背景2.jpg") top center / 100% auto no-repeat;
   background-color:#fcfbfb;
 }
 .topshot .section{background:transparent;}
@@ -92,6 +92,18 @@ img,svg{display:block;max-width:100%;}
 .hero__names em{font-family:var(--script);font-style:normal;color:var(--coral);font-size:.55em;}
 .hero__date{font-family:var(--serif);font-size:clamp(1.6rem,4.4vw,2.6rem);letter-spacing:.3em;margin-top:22px;color:var(--ink);text-shadow:0 2px 10px rgba(255,252,247,.9);}
 .hero__place{font-size:clamp(1.1rem,2.8vw,1.5rem);letter-spacing:.18em;margin-top:12px;color:var(--ink-soft);text-shadow:0 2px 10px rgba(255,252,247,.9);}
+/* 婚礼主题 slogan */
+.hero__slogan{margin-top:clamp(20px,3.4vh,38px);}
+.hero__slogan-en{
+  font-family:var(--script);color:var(--coral);
+  font-size:clamp(2rem,5.6vw,3.4rem);line-height:1.1;
+  text-shadow:0 2px 12px rgba(255,252,247,.95);
+}
+.hero__slogan-cn{
+  font-family:var(--serif);color:var(--teal-deep);font-weight:500;
+  font-size:clamp(1.15rem,3vw,1.7rem);letter-spacing:.24em;margin-top:6px;padding-left:.24em;
+  text-shadow:0 2px 10px rgba(255,252,247,.95);
+}
 /* 直接落在水彩图上的文字：加米白光晕保证清晰 */
 .topshot .section__eyebrow,
 .topshot .countdown .section__title,
@@ -100,12 +112,14 @@ img,svg{display:block;max-width:100%;}
 
 /* 桌面端：把三段精确摆放到水彩图的指定区域 */
 @media(min-width:761px){
-  .topshot{display:block;height:133.4vw;}
+  /* 容器随邀请函长度自然变高（≥整图高度），保证整张图与整封信都完整显示 */
   .topshot > .hero{position:absolute;top:0;left:0;right:0;height:100svh;}
-  /* 倒计时：海水区域 */
-  .topshot > .countdown{position:absolute;top:47%;left:0;right:0;padding-top:0;padding-bottom:0;}
-  /* 邀请函：右移并落到海水区域 */
-  .topshot > .invitation{position:absolute;top:85%;left:auto;right:5%;width:min(560px,48%);padding:0 16px;}
+  /* 倒计时：海水区域（用 vw 固定，避免容器变高时位移） */
+  .topshot > .countdown{position:absolute;top:62vw;left:0;right:0;padding-top:0;padding-bottom:0;}
+  /* 邀请函：下推到水彩图中下部，整封信以半透明信纸卡浮在图上 */
+  .topshot > .invitation{margin-top:100vw;padding-top:0;padding-bottom:clamp(50px,7vw,100px);}
+  /* 卡片靠右，叠在右侧海水区域（左侧露出水彩） */
+  .topshot > .invitation .invitation__card{margin-left:auto;margin-right:0;}
 }
 
 /* ===================== 通用 section ===================== */
@@ -135,13 +149,25 @@ img,svg{display:block;max-width:100%;}
 /* ===================== 邀请函 ===================== */
 .invitation{background:var(--teal-deep);background-image:radial-gradient(circle at 20% 20%,rgba(255,255,255,.08),transparent 50%);}
 .invitation__card{
-  position:relative;max-width:720px;margin:0 auto;background:var(--cream);
-  padding:clamp(40px,7vw,80px);border-radius:6px;box-shadow:0 30px 70px rgba(0,0,0,.25);text-align:center;
+  position:relative;max-width:760px;margin:0 auto;
+  background:rgba(255,250,242,.6);backdrop-filter:blur(8px);
+  border:1px solid rgba(200,162,98,.45);
+  padding:clamp(36px,6vw,68px);border-radius:8px;
+  box-shadow:0 26px 70px rgba(60,53,48,.28);text-align:center;
 }
 .invitation__card .section__eyebrow{color:var(--gold);}
 .invitation__card .script{font-size:clamp(2rem,5vw,3.2rem);color:var(--teal-deep);margin-bottom:26px;}
-.invitation__body p{color:var(--ink);font-size:1.08rem;margin-bottom:14px;letter-spacing:.04em;}
-.invitation__sign{font-family:var(--serif);font-size:1.4rem;color:var(--teal-deep);margin-top:24px;letter-spacing:.1em;}
+/* 正文段落左对齐、加大行距，长信更易读；短句与落款仍居中 */
+.invitation__body{text-align:left;}
+.invitation__body p{color:var(--ink);font-size:1.05rem;line-height:2;margin-bottom:16px;letter-spacing:.03em;}
+/* 点睛短句 */
+.invitation__accent{
+  text-align:center;font-family:var(--serif);font-weight:500;
+  font-size:clamp(1.25rem,3.2vw,1.6rem);color:var(--coral);
+  letter-spacing:.12em;margin:26px 0 !important;
+}
+.invitation__with{text-align:center;font-family:var(--serif);font-style:italic;color:var(--ink-soft);margin-top:30px !important;margin-bottom:4px !important;letter-spacing:.08em;}
+.invitation__sign{text-align:center;font-family:var(--serif);font-size:1.5rem;color:var(--teal-deep);margin-top:4px;letter-spacing:.14em;}
 .invitation__corner{position:absolute;width:34px;height:34px;border-color:var(--gold);}
 .invitation__corner--tl{top:18px;left:18px;border-top:2px solid;border-left:2px solid;}
 .invitation__corner--tr{top:18px;right:18px;border-top:2px solid;border-right:2px solid;}
@@ -360,9 +386,9 @@ a.hotel-contact__val:hover{border-color:var(--gold);}
 .shuttle__info strong{color:var(--coral);}
 .shuttle__times div{display:flex;align-items:center;gap:12px;font-family:var(--serif);font-size:1.2rem;color:var(--teal-deep);margin-bottom:10px;letter-spacing:.06em;}
 .shuttle__dir{display:inline-block;background:rgba(200,162,98,.18);color:var(--ink-soft);font-family:var(--sc);font-size:.78rem;letter-spacing:.1em;padding:3px 12px;border-radius:20px;}
-.qr{display:block;text-align:center;flex-shrink:0;}
-.qr img{width:150px;height:150px;border-radius:12px;border:1px solid rgba(200,162,98,.4);object-fit:cover;background:#fff;}
-.qr span{display:block;margin-top:8px;font-size:.86rem;color:var(--ink-soft);letter-spacing:.06em;}
+.qr{display:block;text-align:center;flex-shrink:0;margin:0;}
+.qr img{width:150px;height:150px;border-radius:12px;border:1px solid rgba(200,162,98,.4);object-fit:cover;background:#fff;cursor:zoom-in;}
+.qr figcaption{display:block;margin-top:8px;font-size:.86rem;color:var(--ink-soft);letter-spacing:.06em;}
 
 .hotel-cta{text-align:center;margin-top:24px;}
 .btn{
@@ -371,6 +397,60 @@ a.hotel-contact__val:hover{border-color:var(--gold);}
   transition:background .3s,color .3s,transform .3s;
 }
 .btn:hover{background:var(--teal-deep);color:#fff;transform:translateY(-2px);}
+.btn--soft{font-size:1rem;padding:11px 30px;border-color:var(--gold);color:var(--gold);}
+.btn--soft:hover{background:var(--gold);color:#fff;}
+
+/* ===== 酒店位置（仿官网「抵达此地」双栏） ===== */
+.location{
+  display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(24px,4vw,48px);align-items:start;
+  background:transparent;
+  padding:0;
+}
+.location__head{font-family:var(--serif);font-size:clamp(1.8rem,4vw,2.6rem);color:var(--teal-deep);font-weight:600;margin-bottom:18px;}
+.location__cn{font-family:var(--serif);font-size:1.3rem;color:var(--ink);letter-spacing:.04em;}
+.location__en{color:var(--ink-soft);font-size:.98rem;letter-spacing:.03em;margin-top:6px;}
+.location__tel{margin-top:10px;color:var(--ink);}
+.location__tel a{color:var(--gold);font-weight:500;border-bottom:1px solid rgba(200,162,98,.5);}
+
+/* 手风琴 */
+.loc-acc{border-top:1px solid rgba(200,162,98,.32);}
+.loc-acc:last-of-type{border-bottom:1px solid rgba(200,162,98,.32);}
+.loc-acc__icon{color:var(--teal);font-size:1.05rem;width:1.4em;text-align:center;flex:none;}
+.loc-acc summary{
+  display:flex;align-items:center;gap:12px;cursor:pointer;list-style:none;
+  padding:16px 2px;color:var(--teal-deep);font-size:1.05rem;letter-spacing:.03em;
+}
+.loc-acc summary::-webkit-details-marker{display:none;}
+.loc-acc__title{flex:1;}
+.loc-acc__chev{width:10px;height:10px;border-right:2px solid var(--gold);border-bottom:2px solid var(--gold);transform:rotate(45deg);transition:transform .3s;flex:none;margin-right:4px;}
+.loc-acc[open] .loc-acc__chev{transform:rotate(-135deg);}
+.loc-acc__body{padding:0 2px 18px 2.6em;color:var(--ink-soft);}
+.loc-acc__body p{margin:4px 0;letter-spacing:.02em;}
+.loc-acc__k{color:var(--ink);}
+.loc-acc__sub{color:var(--teal-deep);font-weight:500;margin-top:12px !important;}
+.loc-acc__link{color:var(--gold);border-bottom:1px solid rgba(200,162,98,.5);}
+.loc-acc__note{margin-top:10px !important;font-size:.92rem;}
+
+/* 地图 */
+.location__map{display:flex;flex-direction:column;gap:12px;}
+.location__mapcanvas{
+  width:100%;height:360px;border-radius:14px;
+  box-shadow:0 10px 30px rgba(60,53,48,.16);background:#e9eef0;z-index:0;
+}
+.location__mapcap{
+  display:block;text-align:center;color:var(--teal-deep);
+  font-size:.96rem;letter-spacing:.04em;
+  padding:11px 18px;border:1px solid var(--gold);border-radius:40px;
+  transition:background .3s,color .3s;cursor:pointer;
+}
+.location__mapcap:hover{background:var(--gold);color:#fff;}
+.location__maprow{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;}
+.location__maplink{color:var(--gold);font-size:.92rem;letter-spacing:.04em;border-bottom:1px solid rgba(200,162,98,.5);}
+
+@media(max-width:760px){
+  .location{grid-template-columns:1fr;}
+  .location__mapcanvas{height:280px;}
+}
 
 @media(max-width:760px){
   .shuttle{flex-direction:column;}

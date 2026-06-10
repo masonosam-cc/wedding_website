@@ -8,6 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Dancing+Script:wght@500;600;700&family=Noto+Serif+SC:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css" />
 <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -41,6 +42,10 @@
     <h1 class="hero__names"><span>Mason</span><em>&amp;</em><span>Nora</span></h1>
     <p class="hero__date">2026 · 11 · 10</p>
     <p class="hero__place">三亚 · 亚龙湾瑞吉酒店</p>
+    <div class="hero__slogan">
+      <p class="hero__slogan-en">Somehow, Always You</p>
+      <p class="hero__slogan-cn">历经山海，始终是你</p>
+    </div>
   </div>
 </header>
 
@@ -62,7 +67,7 @@
   </div>
 </section>
 
-<!-- ===== 邀请函（留白，内容稍后提供） ===== -->
+<!-- ===== 邀请函（叠在主图上） ===== -->
 <section class="section invitation" id="invitation">
   <div class="reveal invitation__card">
     <div class="invitation__corner invitation__corner--tl"></div>
@@ -71,10 +76,17 @@
     <div class="invitation__corner invitation__corner--br"></div>
     <p class="section__eyebrow">INVITATION</p>
     <h2 class="script">致我们最亲爱的你</h2>
-    <div class="invitation__body" data-placeholder="invitation">
-      <p>亲爱的家人与朋友们，</p>
-      <p class="placeholder-note">（邀请函正文待补充——你提供文案后，我会替换这里的内容。）</p>
-      <p class="invitation__sign">—— Mason &amp; Nora</p>
+    <div class="invitation__body">
+      <p class="invitation__accent">相恋十年，我们终于要走到这里。</p>
+      <p>十年前，San Diego 的海风把我们带到彼此面前。后来，我们在 Berkeley 并肩走过青春，也在上海把日子慢慢过成了家。一路山海辗转，岁月更迭，回头看才发现，命运早已把所有相遇，轻轻写向今天。</p>
+      <p class="invitation__accent">历经山海，始终是你。</p>
+      <p>这一次，我们想在三亚的海边，与最珍贵的你们相聚。</p>
+      <p>你们曾出现在我们生命的不同章节里：有人陪我们长大，有人见证我们奔赴远方，有人同行过青春，也有人照亮过日常。每一次相遇、每一段陪伴、每一句祝福，都成为我们走到今天的光。</p>
+      <p>所以，这场婚礼不只是我们的约定，也是一场关于相逢、珍惜与团圆的邀约。我们希望在这个重要的时刻，被生命中最重要的你们温柔见证。</p>
+      <p>愿你们带着笑容与祝福，来到这片海边。愿三亚的海风，替我们记住这一天的相聚；也愿这一场山海之约，成为我们共同珍藏的温暖记忆。</p>
+      <p>谢谢你们，愿意跨越山海，为爱而来。</p>
+      <p class="invitation__with">With love,</p>
+      <p class="invitation__sign">程宇晗 &amp; 陈诺</p>
     </div>
   </div>
 </section>
@@ -309,6 +321,59 @@
       </ul>
     </div>
 
+    <!-- 酒店位置 -->
+    <div class="hotel-block">
+      <h3 class="hotel-block__title"><span>酒店位置</span></h3>
+      <div class="location">
+        <!-- 左栏：抵达此地 -->
+        <div class="location__col">
+          <h4 class="location__head">抵达此地</h4>
+          <div class="location__addr">
+            <p class="location__cn">三亚亚龙湾瑞吉度假酒店</p>
+            <p class="location__en">亚龙湾国家旅游度假区, 三亚, 海南, 572016</p>
+            <p class="location__tel">电话：<a href="tel:089888555555">+86 898-88555555</a></p>
+          </div>
+
+          <details class="loc-acc">
+            <summary>
+              <span class="loc-acc__icon" aria-hidden="true">✈</span>
+              <span class="loc-acc__title">Sanya Phoenix International Airport</span>
+              <span class="loc-acc__chev" aria-hidden="true"></span>
+            </summary>
+            <div class="loc-acc__body">
+              <p><span class="loc-acc__k">距离酒店：</span>35.0 KM</p>
+              <p><span class="loc-acc__k">电话号码：</span>+86 898-88289389</p>
+              <p><a class="loc-acc__link" href="https://www.marriott.com.cn/hotels/syxxr-the-st-regis-sanya-yalong-bay-resort/overview/" target="_blank" rel="noopener">访问网站 ↗</a></p>
+              <p class="loc-acc__note">本酒店不提供班车服务。</p>
+            </div>
+          </details>
+
+          <details class="loc-acc">
+            <summary>
+              <span class="loc-acc__icon" aria-hidden="true">🚐</span>
+              <span class="loc-acc__title">其他交通方式</span>
+              <span class="loc-acc__chev" aria-hidden="true"></span>
+            </summary>
+            <div class="loc-acc__body">
+              <p class="loc-acc__sub">酒店内</p>
+              <p>专车服务</p>
+              <p>豪华轿车 / 面包车服务</p>
+              <p>当地班车 ¥60.00</p>
+              <p class="loc-acc__sub">附近</p>
+              <p>火车站</p>
+              <p>Sanya Railway Station</p>
+            </div>
+          </details>
+        </div>
+
+        <!-- 右栏：地图 -->
+        <div class="location__map">
+          <div id="routeMap" class="location__mapcanvas" role="img" aria-label="三亚凤凰国际机场到亚龙湾瑞吉度假酒店的驾车路线地图"></div>
+          <a class="location__mapcap" href="https://uri.amap.com/navigation?from=109.4125,18.3029,三亚凤凰国际机场&to=109.6385,18.2245,三亚亚龙湾瑞吉度假酒店&mode=car&policy=1&src=mywedding&coordinate=wgs84&callnative=1" target="_blank" rel="noopener">🚗 机场 → 酒店 · 全程约 31.5 公里 · 驾车约 29 分钟</a>
+        </div>
+      </div>
+    </div>
+
     <!-- 地图 -->
     <div class="hotel-block">
       <h3 class="hotel-block__title"><span>酒店地图</span></h3>
@@ -335,15 +400,15 @@
             <div><span class="shuttle__dir">返程</span>15:45　·　20:15</div>
           </div>
         </div>
-        <a class="qr" href="酒店信息/CDF中免穿梭巴士预约二维码.jpg" target="_blank" rel="noopener">
-          <img src="酒店信息/CDF中免穿梭巴士预约二维码.jpg" alt="CDF 中免穿梭巴士预约二维码" loading="lazy" />
-          <span>扫码预约</span>
-        </a>
+        <figure class="qr">
+          <img class="map-zoom" src="酒店信息/CDF中免穿梭巴士预约二维码.jpg" alt="CDF 中免穿梭巴士预约二维码" loading="lazy" />
+          <figcaption>扫码预约（点击放大）</figcaption>
+        </figure>
       </div>
     </div>
 
     <div class="hotel-cta">
-      <a class="btn" href="https://hotel.xmnjdwx.com/template/?flat_id=2&hotel_id=149&uid=1389250&id=125&tem=15&prev_uid=1389250&s_u=1389250&f_u=1389250" target="_blank" rel="noopener">查看酒店更详细介绍 →</a>
+      <a class="btn" href="https://www.marriott.com.cn/hotels/syxxr-the-st-regis-sanya-yalong-bay-resort/overview/" target="_blank" rel="noopener">查看酒店更详细介绍 →</a>
     </div>
   </div>
 </section>
@@ -367,7 +432,7 @@
 <footer class="footer">
   <div class="footer__names script">Mason &amp; Nora</div>
   <p class="footer__date">2026.11.10 · 三亚亚龙湾瑞吉酒店</p>
-  <p class="footer__heart">With love &amp; the sea breeze 🌊</p>
+  <p class="footer__heart">Somehow, Always You · 历经山海，始终是你</p>
 </footer>
 
 <!-- ===== 图片放大遮罩（地图点击放大，无需新开页面） ===== -->
@@ -376,6 +441,54 @@
   <img class="lightbox__img" id="lightboxImg" src="" alt="" />
 </div>
 
+<!-- 地图：Leaflet + 高德中文瓦片，画出机场→酒店真实驾车路线 -->
+<script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+(function(){
+  var el = document.getElementById('routeMap');
+  if (!el || typeof L === 'undefined') return;
+
+  // WGS84 → GCJ02（火星坐标）转换，使路线与高德底图对齐
+  function outOfChina(lng,lat){return (lng<72.004||lng>137.8347)||(lat<0.8293||lat>55.8271);}
+  function tLat(x,y){var r=-100+2*x+3*y+0.2*y*y+0.1*x*y+0.2*Math.sqrt(Math.abs(x));
+    r+=(20*Math.sin(6*x*Math.PI)+20*Math.sin(2*x*Math.PI))*2/3;
+    r+=(20*Math.sin(y*Math.PI)+40*Math.sin(y/3*Math.PI))*2/3;
+    r+=(160*Math.sin(y/12*Math.PI)+320*Math.sin(y*Math.PI/30))*2/3;return r;}
+  function tLng(x,y){var r=300+x+2*y+0.1*x*x+0.1*x*y+0.1*Math.sqrt(Math.abs(x));
+    r+=(20*Math.sin(6*x*Math.PI)+20*Math.sin(2*x*Math.PI))*2/3;
+    r+=(20*Math.sin(x*Math.PI)+40*Math.sin(x/3*Math.PI))*2/3;
+    r+=(150*Math.sin(x/12*Math.PI)+300*Math.sin(x/30*Math.PI))*2/3;return r;}
+  function gcj(lng,lat){
+    if(outOfChina(lng,lat))return [lat,lng];
+    var a=6378245.0, ee=0.00669342162296594323;
+    var dLat=tLat(lng-105,lat-35), dLng=tLng(lng-105,lat-35);
+    var rad=lat/180*Math.PI, m=Math.sin(rad); m=1-ee*m*m; var sm=Math.sqrt(m);
+    dLat=(dLat*180)/((a*(1-ee))/(m*sm)*Math.PI);
+    dLng=(dLng*180)/(a/sm*Math.cos(rad)*Math.PI);
+    return [lat+dLat, lng+dLng]; // 返回 [lat,lng]
+  }
+
+  // 机场→酒店 真实驾车路线（WGS84，[lng,lat]）
+  var routeWGS=[[109.411959,18.300493],[109.408084,18.300468],[109.426557,18.300297],[109.437286,18.302164],[109.448028,18.301082],[109.455008,18.297981],[109.464039,18.296925],[109.47555,18.289715],[109.497673,18.288848],[109.508978,18.276986],[109.524801,18.290147],[109.535003,18.293793],[109.542431,18.293045],[109.557015,18.28662],[109.575935,18.281726],[109.585123,18.283478],[109.594607,18.283366],[109.606888,18.277212],[109.609452,18.270651],[109.608562,18.264966],[109.620241,18.249496],[109.620753,18.246645],[109.628311,18.246479],[109.638637,18.239257],[109.640947,18.23314],[109.632737,18.232002],[109.633804,18.229428]];
+  var line = routeWGS.map(function(c){return gcj(c[0],c[1]);});
+  var airport = gcj(109.412,18.303);
+  var hotel = gcj(109.6385,18.2245);
+
+  var map = L.map(el,{scrollWheelZoom:false,attributionControl:true});
+  L.tileLayer('https://webrd0{s}.is.autonavi.com/appmaptile?lang=zh_cn&size=1&scale=1&style=8&x={x}&y={y}&z={z}',
+    {subdomains:'1234',maxZoom:18,attribution:'© 高德地图'}).addTo(map);
+
+  L.polyline(line,{color:'#1f6f72',weight:5,opacity:.9}).addTo(map);
+
+  function pin(emoji,bg){return L.divIcon({className:'route-pin',
+    html:'<span style="display:flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:'+bg+';box-shadow:0 2px 6px rgba(0,0,0,.35)"><span style="transform:rotate(45deg);font-size:15px">'+emoji+'</span></span>',
+    iconSize:[30,30],iconAnchor:[15,30]});}
+  L.marker(airport,{icon:pin('✈','#c8a262')}).addTo(map).bindTooltip('三亚凤凰国际机场',{direction:'top',offset:[0,-26]});
+  L.marker(hotel,{icon:pin('🏨','#e08aa0')}).addTo(map).bindTooltip('亚龙湾瑞吉度假酒店',{direction:'top',offset:[0,-26]});
+
+  map.fitBounds(L.polyline(line).getBounds(),{padding:[28,28]});
+})();
+</script>
 <script src="script.js"></script>
 </body>
 </html>
