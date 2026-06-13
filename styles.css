@@ -157,8 +157,8 @@ img,svg{display:block;max-width:100%;}
 }
 .invitation__card .section__eyebrow{color:var(--gold);}
 .invitation__card .script{font-size:clamp(2rem,5vw,3.2rem);color:var(--teal-deep);margin-bottom:26px;}
-/* 正文段落左对齐、加大行距，长信更易读；短句与落款仍居中 */
-.invitation__body{text-align:left;}
+/* 正文段落居中对齐，加大行距 */
+.invitation__body{text-align:center;}
 .invitation__body p{color:var(--ink);font-size:1.05rem;line-height:2;margin-bottom:16px;letter-spacing:.03em;}
 /* 点睛短句 */
 .invitation__accent{
@@ -166,6 +166,10 @@ img,svg{display:block;max-width:100%;}
   font-size:clamp(1.25rem,3.2vw,1.6rem);color:var(--coral);
   letter-spacing:.12em;margin:26px 0 !important;
 }
+/* 双语点睛句：星空为题，答案是你 */
+.invitation__accent2{text-align:center;margin:30px 0;}
+.invitation__accent2-en{font-family:var(--script);color:var(--coral);font-size:clamp(1.6rem,4.2vw,2.4rem);line-height:1.2;}
+.invitation__accent2-cn{font-family:var(--serif);font-weight:500;color:var(--teal-deep);font-size:clamp(1.2rem,3vw,1.55rem);letter-spacing:.16em;margin-top:4px;padding-left:.16em;}
 .invitation__with{text-align:center;font-family:var(--serif);font-style:italic;color:var(--ink-soft);margin-top:30px !important;margin-bottom:4px !important;letter-spacing:.08em;}
 .invitation__sign{text-align:center;font-family:var(--serif);font-size:1.5rem;color:var(--teal-deep);margin-top:4px;letter-spacing:.14em;}
 .invitation__corner{position:absolute;width:34px;height:34px;border-color:var(--gold);}
