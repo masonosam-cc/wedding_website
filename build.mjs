@@ -11,6 +11,7 @@ const files = [
   'index.html',
   'styles.css',
   'script.js',
+  'logo/logo-hero-teal.png',
   '婚礼流程图/01-入住.png',
   '婚礼流程图/02-签到.png',
   '婚礼流程图/03-仪式.png',

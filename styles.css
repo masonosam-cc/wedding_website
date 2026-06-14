@@ -82,6 +82,8 @@ img,svg{display:block;max-width:100%;}
 @keyframes floatY{0%,100%{transform:translateY(0);}50%{transform:translateY(-8px);}}
 
 .hero__content{position:absolute;top:0;left:0;right:0;z-index:5;text-align:center;color:var(--teal-deep);padding:clamp(54px,9vh,118px) 20px 0;}
+.hero__logo-wrap{margin:clamp(10px,2vh,22px) auto clamp(6px,1.5vh,16px);line-height:0;}
+.hero__logo{display:block;margin:0 auto;width:clamp(280px,60vw,560px);height:auto;filter:drop-shadow(0 3px 14px rgba(255,252,247,.7));}
 .hero__eyebrow{font-family:var(--serif);letter-spacing:.5em;font-size:.95rem;color:var(--ink-soft);margin-bottom:22px;padding-left:.5em;}
 .hero__names{
   font-family:var(--serif);font-weight:500;line-height:1;
