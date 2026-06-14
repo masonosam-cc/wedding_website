@@ -13,7 +13,7 @@
   --shadow:0 18px 50px rgba(60,53,48,.12);
   --serif:"Cormorant Garamond","Noto Serif SC",serif;
   --sc:"Noto Serif SC",serif;
-  --script:"Dancing Script",cursive;
+  --script:"Dancing Script","Noto Serif SC",cursive;
 }
 *{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;}
@@ -163,15 +163,15 @@ img,svg{display:block;max-width:100%;}
 .invitation__body{text-align:center;}
 .invitation__body p{color:var(--ink);font-size:1.05rem;line-height:2;margin-bottom:16px;letter-spacing:.03em;}
 /* 点睛短句 */
-.invitation__accent{
+.invitation__body .invitation__accent{
   text-align:center;font-family:var(--serif);font-weight:500;
-  font-size:clamp(1.25rem,3.2vw,1.6rem);color:var(--coral);
+  font-size:clamp(1.25rem,3.2vw,1.6rem);color:var(--teal-deep);
   letter-spacing:.12em;margin:26px 0 !important;
 }
 /* 双语点睛句：星空为题，答案是你 */
 .invitation__accent2{text-align:center;margin:30px 0;}
-.invitation__accent2-en{font-family:var(--script);color:var(--coral);font-size:clamp(1.6rem,4.2vw,2.4rem);line-height:1.2;}
-.invitation__accent2-cn{font-family:var(--serif);font-weight:500;color:var(--teal-deep);font-size:clamp(1.2rem,3vw,1.55rem);letter-spacing:.16em;margin-top:4px;padding-left:.16em;}
+.invitation__body .invitation__accent2-en{font-family:var(--script);color:var(--coral);font-size:clamp(1.6rem,4.2vw,2.4rem);line-height:1.2;}
+.invitation__body .invitation__accent2-cn{font-family:var(--serif);font-weight:500;color:var(--teal-deep);font-size:clamp(1.2rem,3vw,1.55rem);letter-spacing:.16em;margin-top:4px;padding-left:.16em;}
 .invitation__with{text-align:center;font-family:var(--serif);font-style:italic;color:var(--ink-soft);margin-top:30px !important;margin-bottom:4px !important;letter-spacing:.08em;}
 .invitation__sign{text-align:center;font-family:var(--serif);font-size:1.5rem;color:var(--teal-deep);margin-top:4px;letter-spacing:.14em;}
 .invitation__corner{position:absolute;width:34px;height:34px;border-color:var(--gold);}
@@ -467,6 +467,7 @@ a.hotel-contact__val:hover{border-color:var(--gold);}
 /* ===================== 页脚 ===================== */
 .footer{background:var(--teal-deep);color:#fff;text-align:center;padding:clamp(50px,8vw,90px) 20px;}
 .footer__names{font-size:clamp(2.4rem,6vw,4rem);color:#fff;margin-bottom:14px;}
+.footer__logo{display:block;margin:0 auto 18px;width:clamp(200px,42vw,340px);height:auto;}
 .footer__date{letter-spacing:.18em;color:rgba(255,255,255,.85);}
 .footer__heart{margin-top:10px;font-family:var(--serif);letter-spacing:.1em;color:var(--gold);}
 
