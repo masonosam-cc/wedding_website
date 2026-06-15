@@ -82,9 +82,9 @@ img,svg{display:block;max-width:100%;}
 @keyframes floatY{0%,100%{transform:translateY(0);}50%{transform:translateY(-8px);}}
 
 .hero__content{position:absolute;top:0;left:0;right:0;z-index:5;text-align:center;color:var(--teal-deep);padding:clamp(54px,9vh,118px) 20px 0;}
-.hero__logo-wrap{margin:clamp(10px,2vh,22px) auto clamp(6px,1.5vh,16px);line-height:0;}
+.hero__logo-wrap{margin:clamp(2px,0.8vh,8px) auto 0;line-height:0;}
 .hero__logo{display:block;margin:0 auto;width:clamp(280px,60vw,560px);height:auto;filter:drop-shadow(0 3px 14px rgba(255,252,247,.7));}
-.hero__eyebrow{font-family:var(--serif);letter-spacing:.5em;font-size:.95rem;color:var(--ink-soft);margin-bottom:22px;padding-left:.5em;}
+.hero__eyebrow{font-family:var(--serif);letter-spacing:.5em;font-size:.95rem;color:var(--ink-soft);margin-bottom:10px;padding-left:.5em;}
 .hero__names{
   font-family:var(--serif);font-weight:500;line-height:1;
   font-size:clamp(3.8rem,13.5vw,9.8rem);
@@ -92,10 +92,10 @@ img,svg{display:block;max-width:100%;}
   color:#2c6f72;text-shadow:0 2px 6px rgba(255,252,247,.95),0 6px 26px rgba(255,252,247,.85);
 }
 .hero__names em{font-family:var(--script);font-style:normal;color:var(--coral);font-size:.55em;}
-.hero__date{font-family:var(--serif);font-size:clamp(1.6rem,4.4vw,2.6rem);letter-spacing:.3em;margin-top:22px;color:var(--ink);text-shadow:0 2px 10px rgba(255,252,247,.9);}
-.hero__place{font-size:clamp(1.1rem,2.8vw,1.5rem);letter-spacing:.18em;margin-top:12px;color:var(--ink-soft);text-shadow:0 2px 10px rgba(255,252,247,.9);}
+.hero__date{font-family:var(--serif);font-size:clamp(1.6rem,4.4vw,2.6rem);line-height:1.15;letter-spacing:.3em;margin-top:8px;color:var(--ink);text-shadow:0 2px 10px rgba(255,252,247,.9);}
+.hero__place{font-size:clamp(1.1rem,2.8vw,1.5rem);line-height:1.2;letter-spacing:.18em;margin-top:2px;color:var(--ink-soft);text-shadow:0 2px 10px rgba(255,252,247,.9);}
 /* 婚礼主题 slogan */
-.hero__slogan{margin-top:clamp(20px,3.4vh,38px);}
+.hero__slogan{margin-top:clamp(-12px,-1vw,-2px);}
 .hero__slogan-en{
   font-family:var(--script);color:var(--coral);
   font-size:clamp(2rem,5.6vw,3.4rem);line-height:1.1;
@@ -103,7 +103,7 @@ img,svg{display:block;max-width:100%;}
 }
 .hero__slogan-cn{
   font-family:var(--serif);color:var(--teal-deep);font-weight:500;
-  font-size:clamp(1.15rem,3vw,1.7rem);letter-spacing:.24em;margin-top:6px;padding-left:.24em;
+  font-size:clamp(1.15rem,3vw,1.7rem);letter-spacing:.24em;margin-top:3px;padding-left:.24em;
   text-shadow:0 2px 10px rgba(255,252,247,.95);
 }
 /* 直接落在水彩图上的文字：加米白光晕保证清晰 */
