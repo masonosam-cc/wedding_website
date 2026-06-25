@@ -239,6 +239,23 @@ img,svg{display:block;max-width:100%;}
 
 /* ===================== 留白占位 ===================== */
 .dresscode{background:var(--sand);}
+/* ===== 着装要求 ===== */
+.dc{max-width:880px;margin:8px auto 0;}
+.dc__styles{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,3vw,34px);margin-bottom:clamp(40px,6vw,64px);}
+.dc__style{text-align:center;}
+.dc__style svg{width:clamp(46px,7vw,64px);height:clamp(46px,7vw,64px);color:var(--teal-deep);margin:0 auto 12px;}
+.dc__style h4{font-family:var(--serif);font-size:clamp(1.3rem,3.2vw,1.7rem);color:var(--teal-deep);font-weight:600;letter-spacing:.08em;margin-bottom:4px;}
+.dc__style p{color:var(--ink-soft);font-size:.96rem;letter-spacing:.03em;}
+.dc__palette-title{text-align:center;font-family:var(--serif);letter-spacing:.4em;font-size:.8rem;color:var(--gold);margin-bottom:26px;padding-left:.4em;}
+.dc__palette{max-width:620px;margin:0 auto;display:grid;grid-template-columns:repeat(5,1fr);gap:clamp(10px,2.5vw,26px);align-items:end;}
+.dc__sw{margin:0;text-align:center;}
+.dc__sw img{width:clamp(62px,12vw,96px);height:auto;display:block;margin:0 auto 12px;filter:drop-shadow(0 8px 16px rgba(60,53,48,.1));}
+.dc__sw figcaption{font-family:var(--serif);font-size:1.05rem;color:var(--ink);letter-spacing:.05em;display:flex;flex-direction:column;gap:1px;}
+.dc__sw figcaption small{font-size:.7rem;letter-spacing:.12em;color:var(--ink-soft);text-transform:uppercase;}
+.dc__note{text-align:center;color:var(--ink-soft);font-size:.98rem;letter-spacing:.04em;margin-top:clamp(30px,5vw,48px);}
+@media(max-width:560px){
+  .dc__styles{grid-template-columns:1fr;gap:22px;}
+}
 .hotel{background:var(--cream);}
 .travel{background:linear-gradient(180deg,var(--sand) 0%,var(--sand-deep) 100%);}
 .placeholder-box{
