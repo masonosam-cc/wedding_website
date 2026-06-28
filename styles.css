@@ -71,6 +71,10 @@ img,svg{display:block;max-width:100%;}
   background-color:#fcfbfb;
 }
 .topshot .section{background:transparent;}
+/* 手机端：内容比整图高很多，改用 cover 让水彩铺满整段（hero+倒计时+邀请函都在图上），与桌面端一致 */
+@media(max-width:760px){
+  .topshot{background-size:cover;background-position:center top;}
+}
 
 /* ===================== HERO ===================== */
 .hero{position:relative;height:min(96svh,133.4vw);min-height:460px;display:flex;align-items:center;justify-content:center;}
