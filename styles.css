@@ -220,7 +220,17 @@ img,svg{display:block;max-width:100%;}
 .scene{border-radius:18px;box-shadow:var(--shadow);width:100%;height:auto;}
 /* 手绘水彩配图：白底/透明底，自然融入，不加边框阴影 */
 .tl__photo{width:100%;height:auto;display:block;border-radius:14px;}
-.tl__time{display:inline-block;font-family:var(--serif);letter-spacing:.18em;color:var(--gold);font-size:1.05rem;margin-bottom:6px;}
+.tl__time{display:inline-block;font-family:var(--serif);letter-spacing:.18em;color:var(--ink-soft);font-size:1.05rem;margin-bottom:6px;}
+.tl__time{color:var(--gold);}
+/* 日分隔标题：坐在时间轴中线上 */
+.tl__day{text-align:center;position:relative;z-index:2;margin:0 0 clamp(30px,5vw,52px);}
+.tl__day span{
+  display:inline-flex;flex-direction:column;align-items:center;line-height:1.05;
+  font-family:var(--serif);font-weight:700;letter-spacing:.04em;
+  font-size:clamp(1.3rem,3vw,1.85rem);color:var(--teal-deep);
+  background:#fdf7ed;padding:4px 16px;border-radius:12px;
+}
+.tl__day em{font-style:normal;font-size:.5em;letter-spacing:.32em;font-weight:600;opacity:.85;margin-bottom:2px;padding-left:.32em;}
 .tl__heading{font-family:var(--serif);font-size:clamp(1.5rem,3.4vw,2.2rem);color:var(--teal-deep);margin-bottom:10px;}
 .tl__text p{color:var(--ink-soft);font-size:1.04rem;letter-spacing:.03em;}
 
@@ -518,8 +528,11 @@ a.hotel-contact__val:hover{border-color:var(--gold);}
   .tl::before{left:22px;}
   .tl__item,.tl__item--reverse{grid-template-columns:1fr;gap:16px;padding-left:50px;}
   .tl__item::after,.tl__item--reverse::after{left:22px;}
-  .tl__art,.tl__item--reverse .tl__art{order:1;}
-  .tl__text,.tl__item--reverse .tl__text{order:2;text-align:left;}
+  .tl__text,.tl__item--reverse .tl__text{order:1;text-align:left;}
+  .tl__art,.tl__item--reverse .tl__art{order:2;}
+  .tl__day{text-align:left;} /* 手机端日期标贴左侧时间轴线 */
+  .tl__day span{align-items:flex-start;font-size:1.3rem;padding:3px 12px;}
+  .tl__day em{padding-left:0;}
 }
 /* ===== 手机端微调（仅 ≤760px，桌面端不变） ===== */
 @media(max-width:760px){
@@ -544,7 +557,7 @@ a.hotel-contact__val:hover{border-color:var(--gold);}
   .nav__toggle{margin-left:auto;}
   .topshot > .hero{height:133.4vw;min-height:0;display:block;}
   .hero__veil{display:none;}
-  .hero__content{position:static;text-align:left;max-width:64%;padding:clamp(46px,7vh,62px) 0 0 clamp(16px,5vw,24px);}
+  .hero__content{position:static;text-align:left;max-width:64%;padding:clamp(20px,3.4vh,36px) 0 0 clamp(16px,5vw,24px);}
   .hero__eyebrow{display:none;} /* WE'RE GETTING MARRIED 仍隐藏（未要求恢复） */
   .hero__logo{width:clamp(84px,24vw,115px);margin:0;}
   .hero__slogan{margin-top:6px;}
@@ -554,6 +567,9 @@ a.hotel-contact__val:hover{border-color:var(--gold);}
   /* 倒计时（第二屏）：去掉 COUNTDOWN 字样，标题略小 */
   .countdown .section__eyebrow{display:none;}
   .countdown .section__title{font-size:1.6rem;}
+  /* 页脚主题句中文换行 */
+  .footer__heart-en,.footer__heart-cn{display:block;}
+  .footer__heart-sep{display:none;}
 }
 @media(prefers-reduced-motion:reduce){
   *{animation:none!important;}
