@@ -545,9 +545,14 @@ a.hotel-contact__val:hover{border-color:var(--gold);}
     height:auto;min-height:0;width:auto;max-width:60%;display:block;
   }
   .hero__veil{display:none;}
-  .hero__content{position:static;text-align:left;padding:clamp(46px,7vh,62px) 0 0 clamp(16px,5vw,24px);}
-  .hero__eyebrow{margin-bottom:5px;font-size:.58rem;letter-spacing:.24em;padding-left:0;}
+  /* 去掉导航 M&N 与 WE'RE GETTING MARRIED，logo 顶到左上角 */
+  .nav__brand{display:none;}
+  .nav__toggle{margin-left:auto;}
+  .hero__eyebrow{display:none;}
+  .hero__content{position:static;text-align:left;padding:clamp(12px,2.4vh,20px) 0 0 clamp(16px,5vw,24px);}
   .hero__logo{width:clamp(88px,25vw,118px);margin:0;}
+  /* 去掉倒计时上方的 COUNTDOWN 字样 */
+  .countdown .section__eyebrow{display:none;}
   .hero__slogan{margin-top:5px;}
   .hero__slogan-en{font-size:clamp(.86rem,3.3vw,1.1rem);}
   .hero__slogan-cn{font-size:clamp(.76rem,2.6vw,.98rem);padding-left:0;}
