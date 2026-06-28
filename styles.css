@@ -538,6 +538,19 @@ a.hotel-contact__val:hover{border-color:var(--gold);}
   .hotel-hero{height:66.7vw;}
   .hotel-hero__overlay{padding:0 10px clamp(16px,4vw,32px);}
   .hotel-hero__logo{width:98%;}
+
+  /* 5. 首屏：缩小 logo/slogan，让 logo+slogan+日期+地点+倒计时都落在主图上 */
+  .topshot > .hero{height:auto;min-height:0;}
+  .hero__content{position:static;padding:clamp(18px,4vh,38px) 20px 6px;}
+  .hero__veil{background:linear-gradient(180deg,rgba(255,252,247,.6) 0%,rgba(255,252,247,.15) 18%,transparent 36%);}
+  .hero__eyebrow{margin-bottom:7px;font-size:.76rem;letter-spacing:.4em;}
+  .hero__logo{width:clamp(130px,36vw,175px);}
+  .hero__slogan{margin-top:5px;}
+  .hero__slogan-en{font-size:clamp(1.2rem,4.6vw,1.65rem);}
+  .hero__slogan-cn{font-size:clamp(.9rem,3.2vw,1.18rem);}
+  .hero__date{margin-top:7px;}
+  .topshot > .countdown{padding-top:4px;padding-bottom:clamp(24px,5vw,42px);}
+  .countdown .section__title{font-size:1.5rem;}
 }
 @media(prefers-reduced-motion:reduce){
   *{animation:none!important;}
