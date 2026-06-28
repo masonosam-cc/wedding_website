@@ -487,6 +487,10 @@ a.hotel-contact__val:hover{border-color:var(--gold);}
 .footer__logo{display:block;margin:0 auto 18px;width:clamp(200px,42vw,340px);height:auto;}
 .footer__date{letter-spacing:.18em;color:rgba(255,255,255,.85);}
 .footer__heart{margin-top:10px;font-family:var(--serif);letter-spacing:.1em;color:var(--gold);}
+.footer__beian{margin-top:18px;display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:6px 18px;font-size:.78rem;letter-spacing:.04em;}
+.footer__beian a{color:rgba(255,255,255,.55);transition:color .3s;display:inline-flex;align-items:center;gap:5px;}
+.footer__beian a:hover{color:rgba(255,255,255,.9);}
+.footer__badge{width:15px;height:16px;flex:none;}
 
 /* ===================== 响应式 ===================== */
 @media(max-width:760px){
