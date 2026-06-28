@@ -71,14 +71,23 @@ img,svg{display:block;max-width:100%;}
   background-color:#fcfbfb;
 }
 .topshot .section{background:transparent;}
-/* 手机端：横向完整显示整张水彩图（不裁切），图下方用柔和暖色水彩底延续，避免突兀的白 */
+/* 手机端：整张水彩图横向完整显示（不裁切），并把 hero+倒计时压紧到图片高度范围内，
+   让图铺到倒计时区域；邀请函落到图下方的柔和暖色水彩底上（图下不再露白） */
 @media(max-width:760px){
   .topshot{
+    justify-content:flex-start;
     background:
       url("请柬主图/主图背景2.jpg") top center / 100% auto no-repeat,
       linear-gradient(180deg, #fbfaf7 0%, #f5ecdc 55%, #efe1cd 100%);
     background-color:#f5ecdc;
   }
+  /* hero 高度由内容决定，整体收紧上移 */
+  .topshot > .hero{height:auto;min-height:0;}
+  .hero__veil{height:60%;}
+  .hero__content{position:static;padding:clamp(22px,5vh,46px) 20px 4px;}
+  .hero__logo{width:clamp(190px,50vw,250px);}
+  /* 倒计时收紧上下留白，落在图上 */
+  .topshot > .countdown{padding-top:4px;padding-bottom:clamp(30px,6vw,52px);}
 }
 
 /* ===================== HERO ===================== */
@@ -197,6 +206,8 @@ img,svg{display:block;max-width:100%;}
   box-shadow:var(--shadow);transition:transform .4s,box-shadow .4s;
 }
 .info-card:hover{transform:translateY(-6px);box-shadow:0 26px 60px rgba(60,53,48,.16);}
+.info-card--link{display:block;text-decoration:none;cursor:pointer;}
+.info-card--link .info-card__sub{color:var(--gold);}
 .info-card__icon{width:58px;height:58px;margin:0 auto 18px;color:var(--teal);}
 .info-card h3{font-family:var(--serif);font-size:1.5rem;color:var(--teal-deep);margin-bottom:8px;letter-spacing:.05em;}
 .info-card p{color:var(--ink);font-size:1.02rem;}
@@ -517,6 +528,24 @@ a.hotel-contact__val:hover{border-color:var(--gold);}
   .tl__item::after,.tl__item--reverse::after{left:22px;}
   .tl__art,.tl__item--reverse .tl__art{order:1;}
   .tl__text,.tl__item--reverse .tl__text{order:2;text-align:left;}
+}
+/* ===== 手机端微调（仅 ≤760px，桌面端不变） ===== */
+@media(max-width:760px){
+  /* 1. 倒计时挤在一行 */
+  .cd{gap:5px;flex-wrap:nowrap;margin:22px 0 14px;}
+  .cd__unit{min-width:0;flex:1;padding:10px 6px;border-radius:13px;gap:3px;}
+  .cd__num{font-size:clamp(1.4rem,7.4vw,2rem);}
+  .cd__label{font-size:.6rem;letter-spacing:.08em;padding-left:.08em;}
+  .cd__sep{font-size:1.2rem;margin-top:9px;}
+  /* 2. 时间一行、地点一行 */
+  .cd__note-line{display:block;}
+  .cd__note-dot{display:none;}
+  /* 3. 邀请函第一句缩到一行 */
+  .invitation__body .invitation__accent{font-size:1rem;letter-spacing:.05em;}
+  /* 4. 酒店照片完整显示（高度=屏宽÷1.5，匹配照片3:2比例）+ logo 调大 */
+  .hotel-hero{height:66.7vw;}
+  .hotel-hero__overlay{padding:0 10px clamp(16px,4vw,32px);}
+  .hotel-hero__logo{width:98%;}
 }
 @media(prefers-reduced-motion:reduce){
   *{animation:none!important;}
