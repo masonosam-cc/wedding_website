@@ -539,15 +539,18 @@ a.hotel-contact__val:hover{border-color:var(--gold);}
   .hotel-hero__overlay{padding:0 10px clamp(16px,4vw,32px);}
   .hotel-hero__logo{width:98%;}
 
-  /* 5. 手机端首屏=主图：居中显示 logo + slogan + 日期 + 地点（M&N 导航保留）；倒计时在第二屏 */
-  .topshot > .hero{height:133.4vw;min-height:0;display:flex;align-items:center;justify-content:center;}
+  /* 5. 手机端首屏：去掉导航 M&N（菜单按钮保持右上角）；logo+slogan 缩小置于左上角海水区域，尽量不遮挡主图；倒计时仍在第二屏不动 */
+  .nav__brand{display:none;}
+  .nav__toggle{margin-left:auto;}
+  .topshot > .hero{height:133.4vw;min-height:0;display:block;}
   .hero__veil{display:none;}
-  .hero__content{position:static;text-align:center;padding:0 20px;}
+  .hero__content{position:static;text-align:left;max-width:64%;padding:clamp(46px,7vh,62px) 0 0 clamp(16px,5vw,24px);}
   .hero__eyebrow{display:none;} /* WE'RE GETTING MARRIED 仍隐藏（未要求恢复） */
-  .hero__logo{width:clamp(150px,40vw,230px);margin:0 auto;}
-  .hero__slogan{margin-top:8px;}
-  .hero__slogan-en{font-size:clamp(1.1rem,4.2vw,1.6rem);}
-  .hero__slogan-cn{font-size:clamp(.92rem,3vw,1.2rem);}
+  .hero__logo{width:clamp(84px,24vw,115px);margin:0;}
+  .hero__slogan{margin-top:6px;}
+  .hero__slogan-en{font-size:clamp(.82rem,3.1vw,1.05rem);}
+  .hero__slogan-cn{font-size:clamp(.72rem,2.5vw,.92rem);padding-left:0;}
+  .hero__date,.hero__place{display:none;} /* 手机端第一页不显示日期与酒店 */
   /* 倒计时（第二屏）：去掉 COUNTDOWN 字样，标题略小 */
   .countdown .section__eyebrow{display:none;}
   .countdown .section__title{font-size:1.6rem;}
