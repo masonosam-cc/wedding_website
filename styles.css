@@ -71,9 +71,14 @@ img,svg{display:block;max-width:100%;}
   background-color:#fcfbfb;
 }
 .topshot .section{background:transparent;}
-/* 手机端：内容比整图高很多，改用 cover 让水彩铺满整段（hero+倒计时+邀请函都在图上），与桌面端一致 */
+/* 手机端：横向完整显示整张水彩图（不裁切），图下方用柔和暖色水彩底延续，避免突兀的白 */
 @media(max-width:760px){
-  .topshot{background-size:cover;background-position:center top;}
+  .topshot{
+    background:
+      url("请柬主图/主图背景2.jpg") top center / 100% auto no-repeat,
+      linear-gradient(180deg, #fbfaf7 0%, #f5ecdc 55%, #efe1cd 100%);
+    background-color:#f5ecdc;
+  }
 }
 
 /* ===================== HERO ===================== */
