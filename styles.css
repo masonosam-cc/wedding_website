@@ -71,23 +71,15 @@ img,svg{display:block;max-width:100%;}
   background-color:#fcfbfb;
 }
 .topshot .section{background:transparent;}
-/* 手机端：整张水彩图横向完整显示（不裁切），并把 hero+倒计时压紧到图片高度范围内，
-   让图铺到倒计时区域；邀请函落到图下方的柔和暖色水彩底上（图下不再露白） */
+/* 手机端：整张水彩图横向完整显示；下方接柔和暖色水彩底（不露白）。
+   首屏压缩规则放在文件末尾（基础规则之后）以确保覆盖生效 */
 @media(max-width:760px){
   .topshot{
-    justify-content:flex-start;
     background:
       url("请柬主图/主图背景2.jpg") top center / 100% auto no-repeat,
       linear-gradient(180deg, #fbfaf7 0%, #f5ecdc 55%, #efe1cd 100%);
     background-color:#f5ecdc;
   }
-  /* hero 高度由内容决定，整体收紧上移 */
-  .topshot > .hero{height:auto;min-height:0;}
-  .hero__veil{height:60%;}
-  .hero__content{position:static;padding:clamp(22px,5vh,46px) 20px 4px;}
-  .hero__logo{width:clamp(190px,50vw,250px);}
-  /* 倒计时收紧上下留白，落在图上 */
-  .topshot > .countdown{padding-top:4px;padding-bottom:clamp(30px,6vw,52px);}
 }
 
 /* ===================== HERO ===================== */
