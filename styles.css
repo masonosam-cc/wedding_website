@@ -67,8 +67,10 @@ img,svg{display:block;max-width:100%;}
   /* 至少为整张图的高度（图比例 高/宽=1.334），确保全图完整显示 */
   min-height:133.4vw;
   display:flex;flex-direction:column;justify-content:space-between;
-  background:url("请柬主图/主图背景2.jpg") top center / 100% auto no-repeat;
-  background-color:#fcfbfb;
+  background:
+    url("请柬主图/主图背景2.jpg") top center / 100% auto no-repeat,
+    linear-gradient(180deg, #fbfaf7 0%, #f5ecdc 60%, #efe1cd 100%);
+  background-color:#f5ecdc;
 }
 .topshot .section{background:transparent;}
 /* 手机端：整张水彩图横向完整显示；下方接柔和暖色水彩底（不露白）。
@@ -129,7 +131,7 @@ img,svg{display:block;max-width:100%;}
   /* 倒计时：海水区域（用 vw 固定，避免容器变高时位移） */
   .topshot > .countdown{position:absolute;top:62vw;left:0;right:0;padding-top:0;padding-bottom:0;}
   /* 邀请函：下推到水彩图中下部，整封信以半透明信纸卡浮在图上 */
-  .topshot > .invitation{margin-top:100vw;padding-top:0;padding-bottom:clamp(50px,7vw,100px);}
+  .topshot > .invitation{margin-top:93vw;padding-top:0;padding-bottom:clamp(8px,1.5vw,24px);}
   /* 卡片靠右，叠在右侧海水区域（左侧露出水彩） */
   .topshot > .invitation .invitation__card{margin-left:auto;margin-right:0;}
 }
@@ -545,8 +547,12 @@ a.hotel-contact__val:hover{border-color:var(--gold);}
   /* 2. 时间一行、地点一行 */
   .cd__note-line{display:block;}
   .cd__note-dot{display:none;}
-  /* 3. 邀请函第一句缩到一行 */
+  /* 3. 邀请函第一句缩到一行 + 正文整体字号调小 */
   .invitation__body .invitation__accent{font-size:1rem;letter-spacing:.05em;}
+  .invitation__body p{font-size:.9rem;line-height:1.85;margin-bottom:13px;}
+  .invitation__accent2-en{font-size:1.3rem;}
+  .invitation__accent2-cn{font-size:1rem;}
+  .invitation__sign{font-size:1.25rem;}
   /* 4. 酒店照片完整显示（高度=屏宽÷1.5，匹配照片3:2比例）+ logo 调大 */
   .hotel-hero{height:66.7vw;}
   .hotel-hero__overlay{padding:0 10px clamp(16px,4vw,32px);}
